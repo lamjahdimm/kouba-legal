@@ -24,7 +24,7 @@
 <body>
 <div class="container">
     <h1>📢 Sus opciones publicitarias</h1>
-    <div class="last-updated"><strong>Última actualización:</strong> 11 de junio de 2026</div>
+    <div class="last-updated"><strong>Última actualización:</strong> 12 de junio de 2026 | <strong>Fecha de entrada en vigor:</strong> 12 de julio de 2026</div>
     
     <p>Kouba respeta su privacidad. A continuación, puede decidir si desea recibir comunicaciones de marketing y anuncios personalizados. Puede cambiar esta configuración en cualquier momento en el menú de configuración de la aplicación.</p>
     
@@ -44,11 +44,17 @@
             </div>
             <button type="button" onclick="saveConsent()">Guardar mis opciones</button>
         </form>
-        <p style="font-size: 0.8rem; margin-top: 20px;">Puede retirar su consentimiento en cualquier momento volviendo a visitar esta página o a través de la configuración de la aplicación. La retirada no afecta la legalidad del tratamiento basado en el consentimiento previo a su retirada.</p>
+        <p style="font-size: 0.8rem; margin-top: 20px;">
+            Puede retirar su consentimiento en cualquier momento volviendo a visitar esta página o a través de la configuración de la aplicación. La retirada no afecta la legalidad del tratamiento basado en el consentimiento previo a su retirada.<br><br>
+            <strong>Importante:</strong> Los análisis esenciales (informes de fallos, uso básico) siempre se recopilan para garantizar la estabilidad y seguridad de la aplicación, incluso si rechaza la tercera opción anterior.
+        </p>
     </div>
     
     <h2>¿Qué sucede si rechazo?</h2>
     <p>Todavía puede usar todas las funciones principales de Kouba (pedir agua, seguimiento, pagos, soporte). La única diferencia es que no recibirá mensajes de marketing y los anuncios no serán personalizados (genéricos).</p>
+    
+    <h2>Cómo almacenamos su consentimiento</h2>
+    <p>Sus opciones se almacenan de forma segura en nuestra base de datos junto con una marca de tiempo y su identificador de usuario. Este registro puede utilizarse para demostrar el cumplimiento de las normas de protección de datos.</p>
     
     <h2>Base legal</h2>
     <p>Solicitamos su consentimiento explícito (opt-in) como lo exige la Ley marroquí N° 09-08 y, cuando corresponda, el RGPD para usuarios en Europa. No utilizamos casillas pre-marcadas.</p>
@@ -61,7 +67,7 @@
         const personalized = document.getElementById('personalizedAds').checked;
         const analytics = document.getElementById('analyticsSharing').checked;
         alert('Sus preferencias han sido guardadas. Puede cambiarlas en cualquier momento en la configuración de la aplicación.');
-        console.log('Consent saved:', { marketing, personalized, analytics });
+        console.log('Consent saved at ' + new Date().toISOString(), { marketing, personalized, analytics });
     }
 </script>
 </body>
