@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موافقة الإعلانات – كوبا</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Cairo', -apple-system, sans-serif; background: #f0f2f5; color: #1e293b; line-height: 1.65; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; background: white; border-radius: 20px; padding: 40px 45px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+        h1 { color: #0a2647; border-bottom: 3px solid #0077b6; padding-bottom: 12px; margin-bottom: 25px; }
+        h2 { color: #144272; margin: 28px 0 12px; border-right: 4px solid #0077b6; padding-right: 15px; }
+        p { margin-bottom: 14px; font-size: 0.95rem; text-align: justify; }
+        .opt-in-box { background: #f1f5f9; border-radius: 16px; padding: 20px; margin: 25px 0; border: 1px solid #cbd5e1; }
+        .checkbox { margin: 15px 0; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+        .checkbox label { flex: 1; font-size: 0.95rem; }
+        button { background: #0a2647; color: white; border: none; padding: 12px 24px; border-radius: 40px; font-size: 1rem; cursor: pointer; margin-top: 20px; font-family: 'Cairo', sans-serif; }
+        button:hover { background: #144272; }
+        .footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #e2e8f0; text-align: center; font-size: 0.75rem; color: #94a3b8; }
+        .last-updated { background: #e8f0fe; padding: 10px 18px; border-radius: 10px; margin-bottom: 30px; display: inline-block; font-size: 0.85rem; }
+        @media (max-width: 700px) { .container { padding: 25px 20px; } .checkbox { flex-direction: column; align-items: flex-start; } }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>📢 خياراتك الإعلانية</h1>
+    <div class="last-updated"><strong>آخر تحديث:</strong> 11 يونيو 2026</div>
+    
+    <p>تحترم كوبا خصوصيتك. أدناه يمكنك تحديد ما إذا كنت ترغب في تلقي الاتصالات التسويقية والإعلانات المخصصة. يمكنك تغيير هذه الإعدادات في أي وقت من خلال قائمة إعدادات التطبيق.</p>
+    
+    <div class="opt-in-box">
+        <form id="consentForm">
+            <div class="checkbox">
+                <input type="checkbox" id="marketingEmails" name="marketingEmails" value="yes">
+                <label for="marketingEmails"><strong>أوافق على تلقي رسائل البريد الإلكتروني الترويجية والإشعارات داخل التطبيق</strong> حول العروض الخاصة والميزات الجديدة وتحديثات المنصة (يمكنني إلغاء الاشتراك في أي وقت).</label>
+            </div>
+            <div class="checkbox">
+                <input type="checkbox" id="personalizedAds" name="personalizedAds" value="yes">
+                <label for="personalizedAds"><strong>أوافق على السماح لكوبا بعرض إعلانات مخصصة لي</strong> بناءً على استخدامي للتطبيق وموقعي (قد تتم مشاركة البيانات مجهولة المصدر مع شركاء الإعلان).</label>
+            </div>
+            <div class="checkbox">
+                <input type="checkbox" id="analyticsSharing" name="analyticsSharing" value="yes">
+                <label for="analyticsSharing"><strong>أوافق على مشاركة بيانات الاستخدام مجهولة المصدر</strong> للمساعدة في تحسين التطبيق وقياس فعالية الإعلانات (لا تتم مشاركة أي معلومات تعريف شخصية).</label>
+            </div>
+            <button type="button" onclick="saveConsent()">حفظ اختياراتي</button>
+        </form>
+        <p style="font-size: 0.8rem; margin-top: 20px;">يمكنك سحب موافقتك في أي وقت من خلال زيارة هذه الصفحة مرة أخرى أو عبر إعدادات التطبيق. لا يؤثر السحب على قانونية المعالجة المبنية على الموافقة قبل سحبها.</p>
+    </div>
+    
+    <h2>ماذا يحدث إذا رفضت؟</h2>
+    <p>لا يزال بإمكانك استخدام جميع الميزات الأساسية لكوبا (طلب المياه، التتبع، المدفوعات، الدعم). الفرق الوحيد هو أنك لن تتلقى رسائل تسويقية وستكون الإعلانات غير مخصصة (عامة).</p>
+    
+    <h2>الأساس القانوني</h2>
+    <p>نطلب موافقتك الصريحة (الاشتراك الاختياري) كما هو مطلوب بموجب القانون المغربي رقم 09-08، وحيثما ينطبق ذلك، اللائحة العامة لحماية البيانات (GDPR) للمستخدمين في أوروبا. لا نستخدم مربعات محددة مسبقًا.</p>
+    
+    <div class="footer">
+        © 2026 KOUBA LAAYOUNE – جميع الحقوق محفوظة
+    </div>
+</div>
+<script>
+    function saveConsent() {
+        const marketing = document.getElementById('marketingEmails').checked;
+        const personalized = document.getElementById('personalizedAds').checked;
+        const analytics = document.getElementById('analyticsSharing').checked;
+        alert('تم حفظ تفضيلاتك. يمكنك تغييرها في أي وقت من خلال إعدادات التطبيق.');
+        console.log('Consent saved:', { marketing, personalized, analytics });
+    }
+</script>
+</body>
+</html>

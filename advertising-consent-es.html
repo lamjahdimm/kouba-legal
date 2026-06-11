@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consentimiento Publicitario – Kouba</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, 'Segoe UI', sans-serif; background: #f0f2f5; color: #1e293b; line-height: 1.65; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; background: white; border-radius: 20px; padding: 40px 45px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+        h1 { color: #0a2647; border-bottom: 3px solid #0077b6; padding-bottom: 12px; margin-bottom: 25px; }
+        h2 { color: #144272; margin: 28px 0 12px; border-left: 4px solid #0077b6; padding-left: 15px; }
+        p { margin-bottom: 14px; font-size: 0.95rem; text-align: justify; }
+        .opt-in-box { background: #f1f5f9; border-radius: 16px; padding: 20px; margin: 25px 0; border: 1px solid #cbd5e1; }
+        .checkbox { margin: 15px 0; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+        .checkbox label { flex: 1; font-size: 0.95rem; }
+        button { background: #0a2647; color: white; border: none; padding: 12px 24px; border-radius: 40px; font-size: 1rem; cursor: pointer; margin-top: 20px; font-family: 'Inter', sans-serif; }
+        button:hover { background: #144272; }
+        .footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #e2e8f0; text-align: center; font-size: 0.75rem; color: #94a3b8; }
+        .last-updated { background: #e8f0fe; padding: 10px 18px; border-radius: 10px; margin-bottom: 30px; display: inline-block; font-size: 0.85rem; }
+        @media (max-width: 700px) { .container { padding: 25px 20px; } .checkbox { flex-direction: column; align-items: flex-start; } }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>📢 Sus opciones publicitarias</h1>
+    <div class="last-updated"><strong>Última actualización:</strong> 11 de junio de 2026</div>
+    
+    <p>Kouba respeta su privacidad. A continuación, puede decidir si desea recibir comunicaciones de marketing y anuncios personalizados. Puede cambiar esta configuración en cualquier momento en el menú de configuración de la aplicación.</p>
+    
+    <div class="opt-in-box">
+        <form id="consentForm">
+            <div class="checkbox">
+                <input type="checkbox" id="marketingEmails" name="marketingEmails" value="yes">
+                <label for="marketingEmails"><strong>Acepto recibir correos electrónicos promocionales y notificaciones dentro de la aplicación</strong> sobre ofertas especiales, nuevas funciones y actualizaciones de la plataforma (puedo darme de baja en cualquier momento).</label>
+            </div>
+            <div class="checkbox">
+                <input type="checkbox" id="personalizedAds" name="personalizedAds" value="yes">
+                <label for="personalizedAds"><strong>Acepto permitir que Kouba me muestre anuncios personalizados</strong> basados en mi uso de la aplicación y mi ubicación (los datos anonimizados pueden compartirse con socios publicitarios).</label>
+            </div>
+            <div class="checkbox">
+                <input type="checkbox" id="analyticsSharing" name="analyticsSharing" value="yes">
+                <label for="analyticsSharing"><strong>Acepto compartir datos de uso anonimizados</strong> para ayudar a mejorar la aplicación y medir la efectividad de la publicidad (no se comparte ninguna identificación personal).</label>
+            </div>
+            <button type="button" onclick="saveConsent()">Guardar mis opciones</button>
+        </form>
+        <p style="font-size: 0.8rem; margin-top: 20px;">Puede retirar su consentimiento en cualquier momento volviendo a visitar esta página o a través de la configuración de la aplicación. La retirada no afecta la legalidad del tratamiento basado en el consentimiento previo a su retirada.</p>
+    </div>
+    
+    <h2>¿Qué sucede si rechazo?</h2>
+    <p>Todavía puede usar todas las funciones principales de Kouba (pedir agua, seguimiento, pagos, soporte). La única diferencia es que no recibirá mensajes de marketing y los anuncios no serán personalizados (genéricos).</p>
+    
+    <h2>Base legal</h2>
+    <p>Solicitamos su consentimiento explícito (opt-in) como lo exige la Ley marroquí N° 09-08 y, cuando corresponda, el RGPD para usuarios en Europa. No utilizamos casillas pre-marcadas.</p>
+    
+    <div class="footer">© 2026 KOUBA LAAYOUNE – Todos los derechos reservados</div>
+</div>
+<script>
+    function saveConsent() {
+        const marketing = document.getElementById('marketingEmails').checked;
+        const personalized = document.getElementById('personalizedAds').checked;
+        const analytics = document.getElementById('analyticsSharing').checked;
+        alert('Sus preferencias han sido guardadas. Puede cambiarlas en cualquier momento en la configuración de la aplicación.');
+        console.log('Consent saved:', { marketing, personalized, analytics });
+    }
+</script>
+</body>
+</html>
