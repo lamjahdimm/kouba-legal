@@ -24,7 +24,7 @@
 <body>
 <div class="container">
     <h1>📢 Your Advertising Choices</h1>
-    <div class="last-updated"><strong>Last Updated:</strong> June 11, 2026</div>
+    <div class="last-updated"><strong>Last Updated:</strong> June 12, 2026 | <strong>Effective Date:</strong> July 12, 2026</div>
     
     <p>Kouba respects your privacy. Below you can decide whether you want to receive marketing communications and personalized advertisements. You can change these settings at any time in the app's settings menu.</p>
     
@@ -44,11 +44,17 @@
             </div>
             <button type="button" onclick="saveConsent()">Save my choices</button>
         </form>
-        <p style="font-size: 0.8rem; margin-top: 20px;">You can withdraw your consent at any time by visiting this page again or through the app settings. Withdrawal does not affect the lawfulness of processing based on consent before its withdrawal.</p>
+        <p style="font-size: 0.8rem; margin-top: 20px;">
+            You can withdraw your consent at any time by revisiting this page or through the app settings. Withdrawal does not affect the lawfulness of processing based on consent before its withdrawal.<br><br>
+            <strong>Important:</strong> Essential analytics (crash reports, basic usage) are always collected to ensure app stability and security, even if you decline the third option above.
+        </p>
     </div>
     
     <h2>What happens if I decline?</h2>
     <p>You can still use all core features of Kouba (ordering water, tracking, payments, support). The only difference is that you will not receive marketing messages and advertisements will be non-personalized (generic).</p>
+    
+    <h2>How we store your consent</h2>
+    <p>Your choices are stored securely in our database along with a timestamp and your user ID. This record may be used to demonstrate compliance with data protection regulations.</p>
     
     <h2>Legal basis</h2>
     <p>We ask for your explicit opt-in consent as required by Moroccan Law No. 09-08 and, where applicable, the GDPR for users in Europe. We do not use pre-ticked boxes.</p>
@@ -61,7 +67,7 @@
         const personalized = document.getElementById('personalizedAds').checked;
         const analytics = document.getElementById('analyticsSharing').checked;
         alert('Your preferences have been saved. You can change them anytime in app settings.');
-        console.log('Consent saved:', { marketing, personalized, analytics });
+        console.log('Consent saved at ' + new Date().toISOString(), { marketing, personalized, analytics });
     }
 </script>
 </body>
