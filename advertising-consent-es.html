@@ -18,16 +18,19 @@
         button:hover { background: #144272; }
         .footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #e2e8f0; text-align: center; font-size: 0.75rem; color: #94a3b8; }
         .last-updated { background: #e8f0fe; padding: 10px 18px; border-radius: 10px; margin-bottom: 30px; display: inline-block; font-size: 0.85rem; }
+        .related-box { background: #e8f0fe; border-left: 4px solid #0077b6; padding: 12px 20px; border-radius: 8px; margin-top: 25px; }
+        a { color: #0077b6; text-decoration: none; }
+        a:hover { text-decoration: underline; }
         @media (max-width: 700px) { .container { padding: 25px 20px; } .checkbox { flex-direction: column; align-items: flex-start; } }
     </style>
 </head>
 <body>
 <div class="container">
     <h1>📢 Sus opciones publicitarias</h1>
-    <div class="last-updated"><strong>Última actualización:</strong> 12 de junio de 2026 | <strong>Fecha de entrada en vigor:</strong> 12 de julio de 2026</div>
-    
-    <p>Kouba respeta su privacidad. A continuación, puede decidir si desea recibir comunicaciones de marketing y anuncios personalizados. Puede cambiar esta configuración en cualquier momento en el menú de configuración de la aplicación.</p>
-    
+    <div class="last-updated"><strong>Última actualización:</strong> 26 de agosto de 2026 | <strong>Fecha de entrada en vigor:</strong> Inmediatamente después del despliegue público de la aplicación</div>
+
+    <p>Kouba respeta su privacidad. A continuación, puede elegir si desea recibir comunicaciones de marketing y publicidad personalizada. Puede cambiar estos ajustes en cualquier momento a través del menú de configuración de la aplicación.</p>
+
     <div class="opt-in-box">
         <form id="consentForm">
             <div class="checkbox">
@@ -36,29 +39,38 @@
             </div>
             <div class="checkbox">
                 <input type="checkbox" id="personalizedAds" name="personalizedAds" value="yes">
-                <label for="personalizedAds"><strong>Acepto permitir que Kouba me muestre anuncios personalizados</strong> basados en mi uso de la aplicación y mi ubicación (los datos anonimizados pueden compartirse con socios publicitarios).</label>
+                <label for="personalizedAds"><strong>Acepto que Kouba me muestre anuncios personalizados</strong> basados en mi uso de la aplicación y ubicación (los datos anonimizados pueden compartirse con socios publicitarios).</label>
             </div>
             <div class="checkbox">
                 <input type="checkbox" id="analyticsSharing" name="analyticsSharing" value="yes">
-                <label for="analyticsSharing"><strong>Acepto compartir datos de uso anonimizados</strong> para ayudar a mejorar la aplicación y medir la efectividad de la publicidad (no se comparte ninguna identificación personal).</label>
+                <label for="analyticsSharing"><strong>Acepto compartir datos de uso anonimizados</strong> para ayudar a mejorar la aplicación y medir la efectividad de la publicidad (no se comparte información de identificación personal).</label>
             </div>
-            <button type="button" onclick="saveConsent()">Guardar mis opciones</button>
+            <button type="button" onclick="saveConsent()">Guardar mis elecciones</button>
         </form>
         <p style="font-size: 0.8rem; margin-top: 20px;">
-            Puede retirar su consentimiento en cualquier momento volviendo a visitar esta página o a través de la configuración de la aplicación. La retirada no afecta la legalidad del tratamiento basado en el consentimiento previo a su retirada.<br><br>
-            <strong>Importante:</strong> Los análisis esenciales (informes de fallos, uso básico) siempre se recopilan para garantizar la estabilidad y seguridad de la aplicación, incluso si rechaza la tercera opción anterior.
+            Puede retirar su consentimiento en cualquier momento volviendo a visitar esta página o a través de la configuración de la aplicación. La retirada no afecta a la legalidad del tratamiento basado en el consentimiento previo a su retirada.<br><br>
+            <strong>Importante:</strong> Los análisis básicos (informes de errores, uso básico) siempre se recopilan para garantizar la estabilidad y seguridad de la aplicación, incluso si rechaza la tercera opción anterior.
         </p>
     </div>
-    
-    <h2>¿Qué sucede si rechazo?</h2>
-    <p>Todavía puede usar todas las funciones principales de Kouba (pedir agua, seguimiento, pagos, soporte). La única diferencia es que no recibirá mensajes de marketing y los anuncios no serán personalizados (genéricos).</p>
-    
+
+    <h2>¿Qué pasa si rechazo?</h2>
+    <p>Todavía puede utilizar todas las funciones principales de Kouba (solicitar agua, seguimiento, pagos, soporte). La única diferencia es que no recibirá mensajes de marketing y los anuncios serán no personalizados (genéricos).</p>
+
     <h2>Cómo almacenamos su consentimiento</h2>
-    <p>Sus opciones se almacenan de forma segura en nuestra base de datos junto con una marca de tiempo y su identificador de usuario. Este registro puede utilizarse para demostrar el cumplimiento de las normas de protección de datos.</p>
-    
+    <p>Sus elecciones se almacenan de forma segura en nuestra base de datos con una marca de tiempo y su ID de usuario. Este registro puede utilizarse para demostrar el cumplimiento de las normas de protección de datos.</p>
+
     <h2>Base legal</h2>
-    <p>Solicitamos su consentimiento explícito (opt-in) como lo exige la Ley marroquí N° 09-08 y, cuando corresponda, el RGPD para usuarios en Europa. No utilizamos casillas pre-marcadas.</p>
-    
+    <p>Solicitamos su consentimiento explícito (opt‑in) según lo exige la Ley marroquí n.º 09-08 y, cuando corresponda, el Reglamento General de Protección de Datos (RGPD) para los usuarios en Europa. No utilizamos casillas marcadas previamente.</p>
+
+    <div class="related-box">
+        <strong>📚 Documentos Legales Relacionados</strong><br>
+        Para una comprensión completa de sus derechos y obligaciones como usuario de la plataforma Kouba, lea también nuestros
+        <a href="https://legal.kouba.site/terms-es"><strong>Términos de Servicio</strong></a>,
+        <a href="https://legal.kouba.site/privacy-es"><strong>Política de Privacidad</strong></a>,
+        <a href="https://legal.kouba.site/cookies-es"><strong>Política de Cookies</strong></a> y nuestra
+        <a href="https://legal.kouba.site/cryptographic-proof-es"><strong>Política de Prueba Criptográfica</strong></a>.
+    </div>
+
     <div class="footer">© 2026 KOUBA LAAYOUNE – Todos los derechos reservados</div>
 </div>
 <script>
@@ -66,7 +78,7 @@
         const marketing = document.getElementById('marketingEmails').checked;
         const personalized = document.getElementById('personalizedAds').checked;
         const analytics = document.getElementById('analyticsSharing').checked;
-        alert('Sus preferencias han sido guardadas. Puede cambiarlas en cualquier momento en la configuración de la aplicación.');
+        alert('Sus preferencias han sido guardadas. Puede cambiarlas en cualquier momento a través de la configuración de la aplicación.');
         console.log('Consent saved at ' + new Date().toISOString(), { marketing, personalized, analytics });
     }
 </script>
