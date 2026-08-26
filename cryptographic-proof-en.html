@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryptographic Proof – Kouba</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, 'Segoe UI', sans-serif; background: #f0f2f5; color: #1e293b; line-height: 1.65; padding: 20px; }
+        .container { max-width: 1000px; margin: 0 auto; background: white; border-radius: 20px; padding: 40px 45px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+        h1 { color: #0a2647; border-bottom: 3px solid #0077b6; padding-bottom: 12px; margin-bottom: 25px; }
+        h2 { color: #144272; margin: 28px 0 12px; border-left: 4px solid #0077b6; padding-left: 15px; }
+        p { margin-bottom: 14px; font-size: 0.95rem; text-align: justify; }
+        ul { list-style: none; padding-left: 22px; margin-bottom: 18px; }
+        ul li { margin-bottom: 8px; padding-left: 20px; position: relative; font-size: 0.93rem; }
+        ul li::before { content: "•"; position: absolute; left: 0; color: #0077b6; }
+        .footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #e2e8f0; text-align: center; font-size: 0.75rem; color: #94a3b8; }
+        .last-updated { background: #e8f0fe; padding: 10px 18px; border-radius: 10px; margin-bottom: 30px; display: inline-block; font-size: 0.85rem; }
+        a { color: #0077b6; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        @media (max-width: 700px) { .container { padding: 25px 20px; } h1 { font-size: 1.5rem; } h2 { font-size: 1.2rem; } }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>🔐 Cryptographic Proof of Payment and Data Integrity</h1>
+    <div class="last-updated"><strong>Last Updated:</strong> August 26, 2026 | <strong>Effective Date:</strong> September 26, 2026</div>
+
+    <h2>1. Our Commitment to Transparency</h2>
+    <p>Kouba is committed to the highest standards of transparency, data integrity, and user trust. We have implemented a public cryptographic verification system. However, <strong>Kouba does not perform verification on your behalf.</strong> For the system to be trustworthy, you—or an independent third party of your choice—must be able to verify your data without relying on Kouba's servers or applications. We achieve this by making our methods, data commitments, and a critical subset of our source code publicly accessible.</p>
+
+    <h2>2. How the Cryptographic Verification System Works (Public &amp; Independent)</h2>
+    <p>To ensure trust without relying on our goodwill, we make our methods <strong>partially public</strong>. The code and logic for the <strong>wallet system</strong>, <strong>payment processing</strong>, and <strong>admin panel</strong>—specifically the interfaces and logic used to manage and view user data—are openly accessible. This allows users and independent auditors to inspect exactly how financial data is handled and how administrative access is performed, without exposing our full proprietary codebase.</p>
+
+    <h3 style="color: #144272; margin: 20px 0 10px; border-left: 4px solid #0077b6; padding-left: 15px; font-size: 1.1rem;">2.1. Public Exposure of Core Financial Algorithms</h3>
+    <p>The algorithms used specifically for payment processing, balance calculation, wallet operations, and the generation of cryptographic commitments are part of the publicly exposed modules. We do not hide how a transaction is recorded, how a balance is computed, or how the cryptographic fingerprints are generated for the public ledger. These core financial logic components are open for inspection, while other non‑financial parts of the platform remain proprietary.</p>
+
+    <h3 style="color: #144272; margin: 20px 0 10px; border-left: 4px solid #0077b6; padding-left: 15px; font-size: 1.1rem;">2.2. Public Publication and Archival of Cryptographic Commitments</h3>
+    <p>Every <strong>seven days</strong>, Kouba publishes a public, immutable record of all critical data (balances, transactions, cancellations) in the form of a compact <strong>cryptographic root</strong>. This root is published on a public ledger (such as a blockchain or a public transparency log) along with a timestamp and a digital signature.</p>
+    <p>The published data remains <strong>publicly accessible for one month</strong> to allow sufficient time for independent verification by users and third parties. After this one‑month period, the data is archived and securely retained for a further <strong>two years</strong>, and remains available upon request for audit, dispute resolution, or legal compliance purposes. This ensures long‑term accountability while keeping the active verification window focused and manageable.</p>
+
+    <h3 style="color: #144272; margin: 20px 0 10px; border-left: 4px solid #0077b6; padding-left: 15px; font-size: 1.1rem;">2.3. Individual Proofs for Users</h3>
+    <p>For each user, Kouba provides a complete <strong>proof path</strong>—the set of intermediate data points that link that user's specific transactions and balances to the publicly published root. Users can download this proof path at any time through the website or app, <strong>but the app does not verify it for you.</strong></p>
+
+    <h3 style="color: #144272; margin: 20px 0 10px; border-left: 4px solid #0077b6; padding-left: 15px; font-size: 1.1rem;">2.4. Independent Verification (Crucial Step)</h3>
+    <p>Users—or any independent third party—can verify their proof path against the public root. <strong>This verification must be performed outside of Kouba's own infrastructure.</strong> Because we publish all cryptographic commitments openly, and because we expose the full logic of how financial data is structured, anyone can:</p>
+    <ul>
+        <li>Write their own verification script,</li>
+        <li>Use an independent open‑source client,</li>
+        <li>Or manually check the data using publicly available tools.</li>
+    </ul>
+    <p><strong>Kouba does not provide a "Verify My Data" button that runs on our servers.</strong> That would be meaningless—we cannot be the ones both creating the data and certifying its correctness. The entire point is that <strong>you can verify us</strong>, not that we verify ourselves.</p>
+
+    <h3 style="color: #144272; margin: 20px 0 10px; border-left: 4px solid #0077b6; padding-left: 15px; font-size: 1.1rem;">2.5. Digital Signatures</h3>
+    <p>All critical operations—including balance updates, payments, and administrative actions—are digitally signed using the platform's private key. The corresponding public key is published on the website and in the public repository, allowing anyone to verify the authenticity of any signed operation.</p>
+
+    <h3 style="color: #144272; margin: 20px 0 10px; border-left: 4px solid #0077b6; padding-left: 15px; font-size: 1.1rem;">2.6. Partially Public Source Code Repository</h3>
+    <p>To enable independent auditing while protecting our proprietary operational logic, Kouba maintains a <strong>partially public</strong> source code repository. The code for the <strong>wallet system</strong>, <strong>payment processing</strong>, and the <strong>admin panel</strong> (specifically the interfaces and logic used to manage and view user data) is fully exposed to the public. This allows security researchers, auditors, and users to inspect the core financial logic and data governance workflows.</p>
+    <p>Other components of the system (e.g., matching, routing, location services) remain proprietary. However, the critical parts that handle user funds, transactions, and administrative data access are open for public scrutiny—ensuring there are no hidden manipulations in the areas that directly affect users' money and privacy.</p>
+
+    <h2>3. What Users and Third Parties Can Verify</h2>
+    <p>With the public cryptographic commitments, exposed core algorithms, and partially open source code, anyone can independently verify:</p>
+    <ul>
+        <li><strong>Wallet Balance:</strong> That a user's current balance matches the balance committed in the public root.</li>
+        <li><strong>Payment History:</strong> That each payment transaction (top‑up, commission, refund) is accurately recorded and has not been altered.</li>
+        <li><strong>Cancellation Transfers:</strong> That any 60% cancellation fee transfer is correctly recorded in both wallets and delivery histories.</li>
+        <li><strong>Order Records:</strong> That the order history is complete and unmodified.</li>
+        <li><strong>Account Settings:</strong> That critical account settings (e.g., email, phone number) have not been changed without the user's knowledge.</li>
+    </ul>
+
+    <h2>4. Administrative Access Restrictions</h2>
+
+    <h3 style="color: #144272; margin: 20px 0 10px; border-left: 4px solid #0077b6; padding-left: 15px; font-size: 1.1rem;">4.1. No Direct Database Access</h3>
+    <p>After deployment, no administrator—including the platform owner, developers, or support staff—has direct access to the production database. All database access is mediated through a secure API that enforces strict access controls and logs every query.</p>
+
+    <h3 style="color: #144272; margin: 20px 0 10px; border-left: 4px solid #0077b6; padding-left: 15px; font-size: 1.1rem;">4.2. Support Ticket Procedure</h3>
+    <p>If an administrator requires access to user data for legitimate support purposes (e.g., resolving a dispute, investigating a technical issue), they must:</p>
+    <ul>
+        <li><strong>Submit a Support Ticket:</strong> The request must be submitted through the official support system, clearly stating the purpose, scope, and duration of the requested access.</li>
+        <li><strong>Provide a Written Statement:</strong> The administrator must provide a written statement explaining why the access is necessary and how the data will be used.</li>
+        <li><strong>Obtain Signed Approval:</strong> In cases involving sensitive data or access beyond standard support needs, the request must be signed by the data protection officer (DPO) or, in the absence of a DPO, by an authorised representative of the platform.</li>
+    </ul>
+
+    <h3 style="color: #144272; margin: 20px 0 10px; border-left: 4px solid #0077b6; padding-left: 15px; font-size: 1.1rem;">4.3. Explicitly Stated Cases</h3>
+    <p>The following are the only circumstances in which administrative access to user data may be granted:</p>
+    <ul>
+        <li><strong>Dispute Resolution:</strong> To investigate and resolve a formal dispute between a customer and a driver.</li>
+        <li><strong>Technical Investigation:</strong> To diagnose and fix a confirmed technical issue that cannot be resolved through normal support channels.</li>
+        <li><strong>Legal Compliance:</strong> To comply with a valid judicial order or a lawful request from a competent Moroccan authority (e.g., CNDP, judicial police).</li>
+        <li><strong>Fraud Prevention:</strong> To investigate suspected fraudulent activity, provided that the suspicion is based on objective evidence and documented.</li>
+    </ul>
+
+    <h3 style="color: #144272; margin: 20px 0 10px; border-left: 4px solid #0077b6; padding-left: 15px; font-size: 1.1rem;">4.4. Audit Trail</h3>
+    <p>Every instance of administrative data access is logged in an immutable audit trail, including:</p>
+    <ul>
+        <li>The identity of the administrator</li>
+        <li>The date and time of access</li>
+        <li>The specific data accessed</li>
+        <li>The purpose of access</li>
+        <li>The approval reference (if applicable)</li>
+    </ul>
+    <p>Users will be notified within 48 hours of any administrative access to their data, except where such notification would compromise a lawful investigation.</p>
+
+    <h2>5. Payment Processing, Receipts, and Cancellation Rules</h2>
+
+    <h3 style="color: #144272; margin: 20px 0 10px; border-left: 4px solid #0077b6; padding-left: 15px; font-size: 1.1rem;">5.1. Payment Top‑ups and Receipts</h3>
+    <p>For every successful top‑up or payment added to the user's wallet (e.g., purchasing credit), Kouba generates a detailed receipt. This receipt includes:</p>
+    <ul>
+        <li>A unique transaction token,</li>
+        <li>The payment amount,</li>
+        <li>A timestamp,</li>
+        <li>Any voucher or promo code used, and</li>
+        <li>The user's identifying details.</li>
+    </ul>
+    <p>The receipt is available for download and direct printing from within the app or the website.</p>
+
+    <h3 style="color: #144272; margin: 20px 0 10px; border-left: 4px solid #0077b6; padding-left: 15px; font-size: 1.1rem;">5.2. Cancellations and Fee Transfers</h3>
+    <p>Cancellations follow a separate process. <strong>Receipts are not issued for cancellations.</strong></p>
+    <p>When a driver <strong>or</strong> a client cancels an order after a match has been made, a cancellation fee of <strong>60% of the base service price</strong> is transferred to the <strong>"not waiting party"</strong> (the party who did not initiate the cancellation).</p>
+    <p>For example, if a driver cancels after a match where the base price is 5 MAD, 60% (i.e., 3 MAD) is moved from the driver's applicable balance to the client's wallet, together with the recorded cancellation reason. This transaction is permanently recorded in:</p>
+    <ul>
+        <li>The client's wallet history,</li>
+        <li>The driver's wallet history, and</li>
+        <li>The delivery history of both parties.</li>
+    </ul>
+    <p>While no printable receipt is produced for cancellations, the transfer is <strong>fully verifiable</strong> through our public cryptographic commitments and exposed core algorithms, ensuring complete transparency and allowing users to track every database entry independently.</p>
+
+    <h3 style="color: #144272; margin: 20px 0 10px; border-left: 4px solid #0077b6; padding-left: 15px; font-size: 1.1rem;">5.3. Base Price, Water Costs, and Service Fees</h3>
+    <p>The base service price may vary from city to city, reflecting local currency differences and the specific operational costs determined by Kouba.</p>
+    <p>Importantly, <strong>Kouba does not charge for the water itself.</strong> We exclusively charge for <strong>facilitating the connection and service</strong> between clients and drivers. The actual price of the water delivered is a matter of commodity pricing and may be regulated by Kouba's internal policies or by government regulations. <strong>Kouba's service does not interfere with or set the price of the water commodity itself.</strong></p>
+
+    <h2>6. Legal Framework</h2>
+
+    <h3 style="color: #144272; margin: 20px 0 10px; border-left: 4px solid #0077b6; padding-left: 15px; font-size: 1.1rem;">6.1. Moroccan Law</h3>
+    <ul>
+        <li><strong>Law No. 09-08 on the Protection of Individuals with Regard to Processing of Personal Data:</strong> This law establishes the fundamental principles of data protection in Morocco, including the rights of access, rectification, and objection. Our cryptographic verification system and access controls are designed to comply with Articles 4–10 (data quality and security) and Articles 20–24 (data subject rights) of this law.</li>
+        <li><strong>Law No. 53-05 on Electronic Exchange of Legal Data:</strong> This law provides the legal framework for electronic signatures, electronic transactions, and the evidentiary value of electronic documents. The digital signatures used in our system are legally recognised under this law, particularly Articles 5–9 (electronic signature) and Articles 10–15 (electronic evidence).</li>
+        <li><strong>Law No. 31-05 on the Protection of Intellectual Property:</strong> This law protects the platform's intellectual property rights, including the cryptographic verification tools developed by Kouba.</li>
+        <li><strong>CNDP Regulations:</strong> The Moroccan National Commission for the Control of Personal Data Protection (CNDP) has issued guidelines on data security and breach notification. Our system complies with CNDP recommendations on encryption, access control, and breach notification within 72 hours.</li>
+    </ul>
+
+    <h3 style="color: #144272; margin: 20px 0 10px; border-left: 4px solid #0077b6; padding-left: 15px; font-size: 1.1rem;">6.2. International Law</h3>
+    <ul>
+        <li><strong>General Data Protection Regulation (GDPR) (EU) 2016/679:</strong> Although Kouba is based in Morocco, we process data of users who may be located in the European Union. Our cryptographic verification system and access controls align with GDPR principles, including:
+            <ul style="list-style: none; padding-left: 30px; margin-top: 6px;">
+                <li style="padding-left: 20px; position: relative; font-size: 0.93rem;">• <strong>Article 5(1)(f):</strong> Integrity and confidentiality – personal data must be processed in a manner that ensures appropriate security.</li>
+                <li style="padding-left: 20px; position: relative; font-size: 0.93rem;">• <strong>Article 25:</strong> Data protection by design and by default – we have embedded cryptographic protections into the platform's architecture.</li>
+                <li style="padding-left: 20px; position: relative; font-size: 0.93rem;">• <strong>Article 32:</strong> Security of processing – our encryption, access controls, and audit logging meet the GDPR's security requirements.</li>
+                <li style="padding-left: 20px; position: relative; font-size: 0.93rem;">• <strong>Articles 33–34:</strong> Breach notification – we notify affected users and supervisory authorities within 72 hours of a confirmed breach.</li>
+            </ul>
+        </li>
+        <li><strong>OECD Guidelines on the Protection of Privacy and Transborder Flows of Personal Data:</strong> These guidelines, which Morocco has endorsed, recommend that data controllers implement security safeguards and provide individuals with access and correction rights. Our system fulfils these recommendations.</li>
+        <li><strong>UN Guidelines for the Regulation of Computerized Personal Data Files:</strong> These guidelines (adopted by the UN General Assembly in 1990) establish principles of data accuracy, security, and transparency that our cryptographic verification system embodies.</li>
+    </ul>
+
+    <h2>7. User Responsibilities</h2>
+    <p>While Kouba provides the tools and public data for independent verification, users are responsible for:</p>
+    <ul>
+        <li>Safeguarding their account credentials and not sharing them with others.</li>
+        <li>Regularly verifying their data using independent tools or third‑party auditors.</li>
+        <li>Reporting any discrepancies immediately to <a href="mailto:support@kouba.site">support@kouba.site</a>.</li>
+    </ul>
+
+    <h2>8. Changes to This Policy</h2>
+    <p>Kouba may update this Cryptographic Proof Policy from time to time. Material changes will be notified via email or in‑app notification at least 30 days before they take effect. The latest version will always be available at this page.</p>
+
+    <h2>9. Contact Us</h2>
+    <p>For questions about the cryptographic verification system, data integrity, or administrative access:</p>
+    <ul>
+        <li><strong>Email:</strong> <a href="mailto:admin@kouba.site">admin@kouba.site</a></li>
+        <li><strong>Phone:</strong> +212 709 675 140</li>
+        <li><strong>Address:</strong> Laayoune, Kingdom of Morocco</li>
+    </ul>
+
+    <div class="footer">© 2026 KOUBA LAAYOUNE – All Rights Reserved</div>
+</div>
+</body>
+</html>
