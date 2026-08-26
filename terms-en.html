@@ -14,61 +14,148 @@
         p { margin-bottom: 14px; font-size: 0.95rem; text-align: justify; }
         .last-updated { background: #e8f0fe; padding: 10px 18px; border-radius: 10px; margin-bottom: 30px; display: inline-block; font-size: 0.85rem; }
         .contact-box { background: #e8f5e9; border-left: 4px solid #2e7d32; padding: 18px 20px; border-radius: 12px; margin: 25px 0; }
+        .related-box { background: #e8f0fe; border-left: 4px solid #0077b6; padding: 12px 20px; border-radius: 8px; margin-top: 25px; }
         ul { list-style: none; padding-left: 22px; margin-bottom: 18px; }
-        ul li { margin-bottom: 8px; padding-left: 20px; position: relative; font-size: 0.93rem; }
+        ul li { margin-bottom: 8px; padding-left: 20px; position: relative; font-size: 0.93rem; text-align: justify; }
         ul li::before { content: "•"; position: absolute; left: 0; color: #0077b6; font-weight: bold; }
+        ul ul { list-style: none; padding-left: 30px; }
+        ul ul li { padding-left: 20px; }
+        ul ul li::before { content: "•"; position: absolute; left: 0; color: #0077b6; }
         .footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #e2e8f0; text-align: center; font-size: 0.75rem; color: #94a3b8; }
+        a { color: #0077b6; text-decoration: none; }
+        a:hover { text-decoration: underline; }
         @media (max-width: 700px) { .container { padding: 25px 20px; } h1 { font-size: 1.5rem; } h2 { font-size: 1.2rem; } }
     </style>
 </head>
 <body>
 <div class="container">
-    <h1>📄 Terms of Service – Kouba App</h1>
-    <div class="last-updated"><strong>Last Updated:</strong> June 12, 2026 | <strong>Effective Date:</strong> July 12, 2026</div>
-    <p>Welcome to <strong>Kouba</strong> – the Water Tanker Automation Platform in Laayoune. By using our application and services, you agree to be bound by these Terms and Conditions. Please read them carefully.</p>
+    <h1>📜 Terms of Service – Kouba Application</h1>
+    <div class="last-updated"><strong>Last Updated:</strong> August 26, 2026 | <strong>Effective Date:</strong> Immediately upon public deployment of the application</div>
+
+    <p>Welcome to <strong>Kouba</strong> – the water tanker automation platform. By using our application and services, you agree to comply with these terms and conditions. Please read them carefully.</p>
 
     <h2>1. Definitions</h2>
-    <ul><li><strong>"Platform" / "App" / "Kouba":</strong> The mobile application (Android and iOS), admin dashboard, and all related services.</li><li><strong>"Customer" / "User":</strong> Any individual who registers an account to request water delivery services.</li><li><strong>"Driver" / "Service Provider":</strong> Any individual who owns a licensed water tanker and provides delivery services through the platform.</li><li><strong>"Services":</strong> Connecting customers with drivers, order management, live tracking, digital payments, and ratings.</li><li><strong>"Agreement":</strong> These Terms, the Privacy Policy, Cookies Policy, and Advertising Consent.</li></ul>
+    <ul>
+        <li><strong>"Platform" / "Application" / "Kouba":</strong> The mobile application (Android and iOS), the administrative dashboard, and all associated services.</li>
+        <li><strong>"Client" / "User":</strong> Any person who downloads the application and registers an account to order water delivery services.</li>
+        <li><strong>"Driver" / "Service Provider":</strong> Any person who owns a licensed water tanker and provides delivery services through the platform.</li>
+        <li><strong>"Services":</strong> Connecting clients with tanker drivers, order management, live tracking, digital payments, and ratings.</li>
+        <li><strong>"Agreement":</strong> These terms and conditions, the Privacy Policy, the Cookies Policy, and the Cryptographic Proof Policy.</li>
+    </ul>
 
     <h2>2. Acceptance of Terms</h2>
-    <p>By using Kouba, you acknowledge that you have read, understood, and accepted these terms. If you do not agree, do not use the app. We may modify these terms; material changes will be notified via email or in-app notification. Continued use after changes constitutes acceptance.</p>
+    <p>By using Kouba, you acknowledge that you have read, understood, and accepted these terms. If you do not agree, please do not use the application. We reserve the right to modify these terms; users will be notified of any material changes via email or in-app notification. Your continued use of the application after modifications constitutes acceptance of the updated terms.</p>
 
     <h2>3. Registration and Accounts</h2>
-    <ul><li>You must be at least <strong>18 years old</strong> (or have parental consent as a customer).</li><li>You must provide accurate and complete information and keep it updated.</li><li>You are responsible for your account credentials and all activities under your account.</li><li>We reserve the right to suspend or terminate any account that violates these terms or applicable laws.</li><li>You may delete your account at any time via app settings or by contacting <strong>admin@kouba.site</strong>. Deletion is permanent. Personal data will be removed within 30 days as described in our Privacy Policy.</li></ul>
+    <ul>
+        <li>You must be at least <strong>18 years old</strong> (or have parental consent as a client).</li>
+        <li>You must provide accurate and complete information during registration and keep it updated.</li>
+        <li>You are responsible for maintaining the confidentiality of your account credentials.</li>
+        <li>You are responsible for all activities conducted through your account.</li>
+        <li>We reserve the right to suspend or terminate any account that violates these terms or applicable laws.</li>
+        <li>You may delete your account at any time through the app settings or by contacting <strong>admin@kouba.site</strong>. Deletion is permanent. Your personal data will be removed within 30 days as outlined in the Privacy Policy.</li>
+    </ul>
 
     <h2>4. Account Types and Permissions</h2>
-    <h3>A. Customer Account</h3>
-    <ul><li>Request water delivery from registered drivers.</li><li>Rate drivers (1–5 stars) after each trip.</li><li>Track driver's live location during the trip.</li><li>Cancel a request within 30 minutes after driver acceptance without penalty.</li><li>View order history and financial transactions.</li><li>Top up digital wallet via vouchers or phone credit.</li></ul>
-    <h3>B. Driver Account</h3>
-    <ul><li>Must own a licensed water tanker (Laayoune Municipality).</li><li>Provide valid documents: driver's license, vehicle ownership, insurance, health/inspection certificates.</li><li>Documents subject to review and approval by platform administration.</li><li>Receive requests based on remaining tank capacity (updated every 12 hours).</li><li>Accept or reject requests within 3 minutes; excessive rejections may affect account status.</li><li>Provide professional and safe service according to quality standards.</li></ul>
+    <h3>a. Client Account</h3>
+    <ul>
+        <li>You may order water delivery services from registered drivers.</li>
+        <li>You have the right to rate drivers after each trip (1 to 5 stars).</li>
+        <li>You can track the driver's live location during the trip.</li>
+        <li>You may cancel the order within 30 minutes of the driver's acceptance without penalty (subject to the cancellation provisions in Section 7 below).</li>
+        <li>You can view your order history and financial transactions.</li>
+        <li>You can top up your digital wallet via vouchers or phone credit.</li>
+    </ul>
+    <h3>b. Driver Account</h3>
+    <ul>
+        <li>You must be registered as the owner of a water tanker licensed by the local authorities (Laayoune Municipality).</li>
+        <li>You must provide valid documents (professional driving license, vehicle ownership papers, insurance, health and technical inspection certificates).</li>
+        <li>All documents are subject to review and approval by the platform administration.</li>
+        <li>You may receive delivery orders based on your availability and remaining tank capacity (updated every 12 hours).</li>
+        <li>You may accept or reject incoming orders within 3 minutes; excessive rejection may affect your account status.</li>
+        <li>You agree to provide a professional and safe service in accordance with quality standards.</li>
+    </ul>
 
     <h2>5. Services Provided</h2>
-    <ul><li>Smart matching algorithm (geographic, capacity, water source).</li><li>Live tracking on map.</li><li>Digital wallet and secure payments.</li><li>Rating & review system.</li><li>Support tickets for complaints and disputes.</li></ul>
+    <ul>
+        <li>Smart matching (geographical, capacity, water source).</li>
+        <li>Live tracking on the map.</li>
+        <li>Digital wallet and secure payments.</li>
+        <li>Rating and review system.</li>
+        <li>Support tickets for complaints and disputes.</li>
+        <li>Public cryptographic proof system for data integrity verification (see <a href="https://legal.kouba.site/cryptographic-proof-en">Cryptographic Proof Policy</a>).</li>
+    </ul>
 
     <h2>6. Pricing and Payments</h2>
-    <ul><li>Platform commission per successful delivery: <strong>5 Moroccan Dirhams (5 MAD)</strong>, deducted from driver's wallet.</li><li>Top-rated drivers (≥4.5 stars from at least 10 reviews) receive a <strong>20% commission discount</strong> (pay 4 MAD).</li><li>All prices in MAD, inclusive of taxes.</li><li>Commission is non-refundable after delivery completion.</li><li>If customer cancels after driver acceptance but before driver arrival, commission is refunded to driver.</li>
-    <li><strong>Changes to commission:</strong> We reserve the right to modify commission rates. Any change will be announced via email or in-app notification at least 30 days before it takes effect.</li></ul>
+    <ul>
+        <li><strong>The base service price is variable by city:</strong> reflecting local currency differences and the specific operational costs determined by Kouba.</li>
+        <li><strong>Kouba does not charge for the water itself.</strong> We exclusively charge <strong>facilitation fees for connecting and servicing</strong> between clients and drivers. The actual price of the water delivered is a matter of commodity pricing and may be regulated by Kouba's internal policies or by government regulations. <strong>Kouba's service does not interfere with or set the price of the water commodity itself.</strong></li>
+        <li>All prices are in Moroccan dirhams and include taxes (if applicable).</li>
+        <li>Facilitation fees are non-refundable once the delivery is successfully completed.</li>
+        <li>All financial transactions are recorded and verifiable through the <a href="https://legal.kouba.site/cryptographic-proof-en">public cryptographic proof system</a>.</li>
+        <li>We reserve the right to modify facilitation fees or the pricing structure. Any change will be announced via email or in-app notification at least 30 days before it takes effect.</li>
+    </ul>
 
-    <h2>7. Cancellation and Refund Policy</h2>
-    <ul><li><strong>Customer cancellation:</strong> Free within 30 minutes of driver acceptance.</li><li><strong>Driver cancellation:</strong> Unjustified cancellation after acceptance may result in a penalty.</li><li><strong>Automatic cancellation:</strong> If no driver accepts within 5 minutes, request is canceled with no charge.</li></ul>
+    <h2>7. Cancellations and Fee Transfers</h2>
+    <ul>
+        <li><strong>Client cancellation:</strong> Free within 30 minutes of the driver's acceptance.</li>
+        <li><strong>Cancellation after matching (by driver or client):</strong> If an order is cancelled after a match has been made, a cancellation fee of <strong>60% of the base service price</strong> is transferred to the <strong>"waiting party"</strong> (the party who did not cancel and was waiting for the service).</li>
+        <li><strong>Example:</strong> If a driver cancels after a match where the base price is 5 MAD, 60% (i.e., 3 MAD) is moved from the driver's applicable balance to the client's wallet, together with the recorded cancellation reason. This transaction is permanently recorded in:
+            <ul style="list-style: none; padding-left: 30px; margin-top: 6px;">
+                <li style="padding-left: 20px; position: relative; font-size: 0.93rem;">• The client's wallet history,</li>
+                <li style="padding-left: 20px; position: relative; font-size: 0.93rem;">• The driver's wallet history, and</li>
+                <li style="padding-left: 20px; position: relative; font-size: 0.93rem;">• The delivery history of both parties.</li>
+            </ul>
+        </li>
+        <li><strong>Automatic cancellation:</strong> If no driver accepts within 5 minutes, the order is automatically cancelled without any fees.</li>
+        <li>All cancellation fee transfers are fully verifiable through the <a href="https://legal.kouba.site/cryptographic-proof-en">public cryptographic proof system</a>.</li>
+    </ul>
 
-    <h2>8. Intellectual Property</h2>
-    <ul><li>All IP rights related to Kouba are owned by the platform, protected by Moroccan law (31-05) and international treaties.</li><li>Copying, modifying, reverse engineering the app is prohibited without written consent.</li><li>"Kouba" name and logo are registered trademarks with OMPIC.</li></ul>
+    <h2>8. Data Integrity and Cryptographic Proof</h2>
+    <p>Kouba is committed to the highest standards of transparency and data integrity. We have implemented a public cryptographic proof system, but <strong>Kouba does not perform verification on your behalf.</strong> For the system to be trustworthy, you—or an independent third party—must be able to verify your data without relying on Kouba's servers. For full details, please read the <a href="https://legal.kouba.site/cryptographic-proof-en"><strong>Cryptographic Proof Policy</strong></a>.</p>
+    <ul>
+        <li><strong>Public publication:</strong> Every <strong>seven days</strong>, Kouba publishes its cryptographic commitments (a compact cryptographic root) on a public ledger. This data remains <strong>publicly accessible for one month</strong>, then is archived and retained for <strong>two additional years</strong>.</li>
+        <li><strong>Independent verification:</strong> Users or any third party can verify their proof path against the public root. <strong>This verification must be performed outside of Kouba's infrastructure.</strong></li>
+        <li><strong>Partially public source code:</strong> The code for the <strong>wallet system, payment processing, and admin panel</strong> is exposed to the public to allow independent auditing, while other components (matching, routing, location services) remain proprietary.</li>
+        <li><strong>Administrative access restrictions:</strong> There is no direct access to the database. Any administrative access requires:
+            <ul style="list-style: none; padding-left: 30px; margin-top: 6px;">
+                <li style="padding-left: 20px; position: relative; font-size: 0.93rem;">• A <strong>support ticket</strong> stating the purpose, scope, and duration,</li>
+                <li style="padding-left: 20px; position: relative; font-size: 0.93rem;">• A <strong>written statement</strong> explaining the necessity of access,</li>
+                <li style="padding-left: 20px; position: relative; font-size: 0.93rem;">• <strong>Signed approval</strong> from the Data Protection Officer (DPO) or an authorised representative, and</li>
+                <li style="padding-left: 20px; position: relative; font-size: 0.93rem;">• An <strong>immutable audit trail</strong> for each access operation.</li>
+            </ul>
+        </li>
+    </ul>
 
-    <h2>9. Limitation of Liability</h2>
-    <ul><li>Kouba acts as a technical intermediary. We are not responsible for water quality, transportation safety, or driver actions.</li><li>We do not guarantee uninterrupted or error-free service.</li><li>Our total liability for any claim arising from the use of the app is limited to the commission amount paid for the relevant trip.</li></ul>
+    <h2>9. Intellectual Property</h2>
+    <ul>
+        <li>All intellectual property rights relating to Kouba are exclusively owned by the platform and are protected by Moroccan laws (Law No. 31-05) and international treaties.</li>
+        <li>Copying, modifying, distributing, or reverse engineering any part of the application is strictly prohibited without prior written consent.</li>
+        <li>The name "Kouba" and its logo are registered trademarks with OMPIC.</li>
+    </ul>
 
-    <h2>10. Disclaimer of Warranties</h2>
-    <p>THE APP AND SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT ANY WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT. WE DO NOT WARRANT THAT THE APP WILL BE SECURE, UNINTERRUPTED, OR ERROR-FREE.</p>
+    <h2>10. Limitation of Liability</h2>
+    <ul>
+        <li>The platform is a technical intermediary between the client and the driver. We are not responsible for the quality of the water, the safety of transport, or the driver's conduct.</li>
+        <li>We do not guarantee that the services will be uninterrupted or error-free.</li>
+        <li>Our total liability for any claim arising from the use of the application is limited to the amount of facilitation fees paid for the relevant trip.</li>
+    </ul>
 
-    <h2>11. Force Majeure</h2>
-    <p>Neither party shall be liable for delays or failures caused by events beyond reasonable control, including natural disasters, government actions, network failures, or infrastructure interruptions.</p>
+    <h2>11. Disclaimer of Warranties</h2>
+    <p><strong>The application and services are provided "as is" and "as available" without any express or implied warranties, including but not limited to the implied warranties of merchantability, fitness for a particular purpose, or non-infringement. We do not warrant that the application will be secure, uninterrupted, or error-free.</strong></p>
 
-    <h2>12. Entire Agreement & Severability</h2>
-    <p>These Terms constitute the entire agreement between you and Kouba. If any provision is found to be unenforceable or invalid, that provision shall be limited or eliminated to the minimum extent necessary, and the remaining provisions shall remain in full force and effect.</p>
+    <h2>12. Force Majeure</h2>
+    <p>Neither party shall be liable for delays or failures caused by events beyond its reasonable control, including natural disasters, government actions, network failures, or infrastructure interruptions.</p>
 
-    <h2>13. Governing Law and Disputes</h2>
-    <ul><li>This agreement is governed by <strong>Moroccan law</strong>.</li><li>Disputes shall first be attempted to resolve amicably through support (admin@kouba.site).</li><li>If not resolved within 30 days, the matter shall be submitted to the <strong>competent courts of Laayoune</strong>.</li></ul>
+    <h2>13. Entire Agreement and Severability</h2>
+    <p>These terms constitute the entire agreement between you and Kouba. If any provision is found to be unenforceable or invalid, that provision shall be limited or eliminated to the minimum extent necessary, and the remaining provisions shall remain in full force and effect.</p>
+
+    <h2>14. Applicable Law and Disputes</h2>
+    <ul>
+        <li>This agreement is governed by <strong>Moroccan law</strong>.</li>
+        <li>In the event of a dispute, the parties shall first attempt to resolve it amicably through support (admin@kouba.site).</li>
+        <li>If the dispute is not resolved within 30 days, it shall be referred to the <strong>competent courts of Laayoune</strong>.</li>
+    </ul>
 
     <div class="contact-box">
         <strong>📞 Contact Us</strong><br>
@@ -76,7 +163,14 @@
         Phone: <a href="tel:+212709675140">+212 709 675 140</a><br>
         Address: Laayoune, Kingdom of Morocco
     </div>
-    <div class="footer">© 2026 KOUBA LAAYOUNE – All Rights Reserved<br>Last Updated: June 12, 2026</div>
+
+    <div class="related-box">
+        <strong>📚 Related Legal Documents</strong><br>
+        For a complete understanding of your rights and obligations as a user of the Kouba platform, please also read our
+        <a href="https://legal.kouba.site/cryptographic-proof-en"><strong>Cryptographic Proof Policy</strong></a>.
+    </div>
+
+    <div class="footer">© 2026 KOUBA LAAYOUNE – All Rights Reserved</div>
 </div>
 </body>
 </html>
