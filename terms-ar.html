@@ -1,196 +1,173 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cryptographic Proof – Kouba</title>
+    <title>شروط الخدمة – كوبا</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', -apple-system, 'Segoe UI', sans-serif; background: #f0f2f5; color: #1e293b; line-height: 1.65; padding: 20px; }
+        body { font-family: 'Cairo', -apple-system, sans-serif; background: #f0f2f5; color: #1e293b; line-height: 1.65; padding: 20px; }
         .container { max-width: 1000px; margin: 0 auto; background: white; border-radius: 20px; padding: 40px 45px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
-        h1 { color: #0a2647; border-bottom: 3px solid #0077b6; padding-bottom: 12px; margin-bottom: 25px; }
-        h2 { color: #144272; margin: 28px 0 12px; border-left: 4px solid #0077b6; padding-left: 15px; }
+        h1 { color: #0a2647; border-bottom: 3px solid #0077b6; padding-bottom: 12px; margin-bottom: 25px; font-size: 1.9rem; }
+        h2 { color: #144272; margin: 28px 0 12px; font-size: 1.35rem; border-right: 4px solid #0077b6; padding-right: 15px; }
+        h3 { color: #1e293b; margin: 18px 0 8px; font-size: 1.1rem; }
         p { margin-bottom: 14px; font-size: 0.95rem; text-align: justify; }
-        ul { list-style: none; padding-left: 22px; margin-bottom: 18px; }
-        ul li { margin-bottom: 8px; padding-left: 20px; position: relative; font-size: 0.93rem; text-align: justify; }
-        ul li::before { content: "•"; position: absolute; left: 0; color: #0077b6; }
-        .footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #e2e8f0; text-align: center; font-size: 0.75rem; color: #94a3b8; }
         .last-updated { background: #e8f0fe; padding: 10px 18px; border-radius: 10px; margin-bottom: 30px; display: inline-block; font-size: 0.85rem; }
-        .effective-immediate { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 12px 20px; border-radius: 8px; margin-top: 30px; font-weight: 600; color: #92400e; }
-        .related-box { background: #e8f0fe; border-left: 4px solid #0077b6; padding: 12px 20px; border-radius: 8px; margin-top: 25px; }
+        .contact-box { background: #e8f5e9; border-right: 4px solid #2e7d32; padding: 18px 20px; border-radius: 12px; margin: 25px 0; }
+        .related-box { background: #e8f0fe; border-right: 4px solid #0077b6; padding: 12px 20px; border-radius: 8px; margin-top: 25px; }
+        ul { list-style: none; padding-right: 22px; margin-bottom: 18px; }
+        ul li { margin-bottom: 8px; padding-right: 20px; position: relative; font-size: 0.93rem; }
+        ul li::before { content: "•"; position: absolute; right: 0; color: #0077b6; font-weight: bold; }
+        .footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #e2e8f0; text-align: center; font-size: 0.75rem; color: #94a3b8; }
         a { color: #0077b6; text-decoration: none; }
         a:hover { text-decoration: underline; }
         @media (max-width: 700px) { .container { padding: 25px 20px; } h1 { font-size: 1.5rem; } h2 { font-size: 1.2rem; } }
-        /* nested list fix */
-        ul ul { padding-left: 30px; list-style: none; }
-        ul ul li { padding-left: 20px; }
-        ul ul li::before { content: "•"; position: absolute; left: 0; color: #0077b6; }
     </style>
 </head>
 <body>
 <div class="container">
-    <h1>🔐 Cryptographic Proof of Payment and Data Integrity</h1>
-    <div class="last-updated"><strong>Last Updated:</strong> August 26, 2026 | <strong>Effective Date:</strong> Immediately upon public deployment of the application</div>
+    <h1>📜 شروط الخدمة – تطبيق كوبا</h1>
+    <div class="last-updated"><strong>آخر تحديث:</strong> 26 أغسطس 2026 | <strong>تاريخ السريان:</strong> فور النشر العام للتطبيق</div>
 
-    <h2>1. Our Commitment to Transparency</h2>
-    <p>Kouba is committed to the highest standards of transparency, data integrity, and user trust. We have implemented a public cryptographic verification system. However, <strong>Kouba does not perform verification on your behalf.</strong> For the system to be trustworthy, you—or an independent third party of your choice—must be able to verify your data without relying on Kouba's servers or applications. We achieve this by making our methods, data commitments, and a critical subset of our source code publicly accessible.</p>
+    <p>مرحباً بك في <strong>كوبا</strong> – منصة أتمتة صهاريج المياه. باستخدامك لتطبيقنا وخدماتك، فإنك توافق على الالتزام بهذه الشروط والأحكام. يرجى قراءتها بعناية.</p>
 
-    <h2>2. How the Cryptographic Verification System Works (Public &amp; Independent)</h2>
-    <p>To ensure trust without relying on our goodwill, we make our methods <strong>partially public</strong>. The code and logic for the <strong>wallet system</strong>, <strong>payment processing</strong>, and <strong>admin panel</strong>—specifically the interfaces and logic used to manage and view user data—are openly accessible. This allows users and independent auditors to inspect exactly how financial data is handled and how administrative access is performed, without exposing our full proprietary codebase.</p>
-
-    <h3 style="color: #144272; margin: 20px 0 10px; border-left: 4px solid #0077b6; padding-left: 15px; font-size: 1.1rem;">2.1. Public Exposure of Core Financial Algorithms</h3>
-    <p>The algorithms used specifically for payment processing, balance calculation, wallet operations, and the generation of cryptographic commitments are part of the publicly exposed modules. We do not hide how a transaction is recorded, how a balance is computed, or how the cryptographic fingerprints are generated for the public ledger. These core financial logic components are open for inspection, while other non‑financial parts of the platform remain proprietary.</p>
-
-    <h3 style="color: #144272; margin: 20px 0 10px; border-left: 4px solid #0077b6; padding-left: 15px; font-size: 1.1rem;">2.2. Public Publication and Archival of Cryptographic Commitments</h3>
-    <p>Every <strong>seven days</strong>, Kouba publishes a public, immutable record of all critical data (balances, transactions, cancellations) in the form of a compact <strong>cryptographic root</strong>. This root is published on a public ledger (such as a blockchain or a public transparency log) along with a timestamp and a digital signature.</p>
-    <p>The published data remains <strong>publicly accessible for one month</strong> to allow sufficient time for independent verification by users and third parties. After this one‑month period, the data is archived and securely retained for a further <strong>two years</strong>, and remains available upon request for audit, dispute resolution, or legal compliance purposes. This ensures long‑term accountability while keeping the active verification window focused and manageable.</p>
-
-    <h3 style="color: #144272; margin: 20px 0 10px; border-left: 4px solid #0077b6; padding-left: 15px; font-size: 1.1rem;">2.3. Individual Proofs for Users</h3>
-    <p>For each user, Kouba provides a complete <strong>proof path</strong>—the set of intermediate data points that link that user's specific transactions and balances to the publicly published root. Users can download this proof path at any time through the website or app, <strong>but the app does not verify it for you.</strong></p>
-
-    <h3 style="color: #144272; margin: 20px 0 10px; border-left: 4px solid #0077b6; padding-left: 15px; font-size: 1.1rem;">2.4. Independent Verification (Crucial Step)</h3>
-    <p>Users—or any independent third party—can verify their proof path against the public root. <strong>This verification must be performed outside of Kouba's own infrastructure.</strong> Because we publish all cryptographic commitments openly, and because we expose the full logic of how financial data is structured, anyone can:</p>
+    <h2>1. تعريفات</h2>
     <ul>
-        <li>Write their own verification script,</li>
-        <li>Use an independent open‑source client,</li>
-        <li>Or manually check the data using publicly available tools.</li>
-    </ul>
-    <p><strong>Kouba does not provide a "Verify My Data" button that runs on our servers.</strong> That would be meaningless—we cannot be the ones both creating the data and certifying its correctness. The entire point is that <strong>you can verify us</strong>, not that we verify ourselves.</p>
-
-    <h3 style="color: #144272; margin: 20px 0 10px; border-left: 4px solid #0077b6; padding-left: 15px; font-size: 1.1rem;">2.5. Digital Signatures</h3>
-    <p>All critical operations—including balance updates, payments, and administrative actions—are digitally signed using the platform's private key. The corresponding public key is published on the website and in the public repository, allowing anyone to verify the authenticity of any signed operation.</p>
-
-    <h3 style="color: #144272; margin: 20px 0 10px; border-left: 4px solid #0077b6; padding-left: 15px; font-size: 1.1rem;">2.6. Partially Public Source Code Repository</h3>
-    <p>To enable independent auditing while protecting our proprietary operational logic, Kouba maintains a <strong>partially public</strong> source code repository. The code for the <strong>wallet system</strong>, <strong>payment processing</strong>, and the <strong>admin panel</strong> (specifically the interfaces and logic used to manage and view user data) is fully exposed to the public. This allows security researchers, auditors, and users to inspect the core financial logic and data governance workflows.</p>
-    <p>Other components of the system (e.g., matching, routing, location services) remain proprietary. However, the critical parts that handle user funds, transactions, and administrative data access are open for public scrutiny—ensuring there are no hidden manipulations in the areas that directly affect users' money and privacy.</p>
-
-    <h2>3. What Users and Third Parties Can Verify</h2>
-    <p>With the public cryptographic commitments, exposed core algorithms, and partially open source code, anyone can independently verify:</p>
-    <ul>
-        <li><strong>Wallet Balance:</strong> That a user's current balance matches the balance committed in the public root.</li>
-        <li><strong>Payment History:</strong> That each payment transaction (top‑up, commission, refund) is accurately recorded and has not been altered.</li>
-        <li><strong>Cancellation Transfers:</strong> That any 60% cancellation fee transfer is correctly recorded in both wallets and delivery histories.</li>
-        <li><strong>Order Records:</strong> That the order history is complete and unmodified.</li>
-        <li><strong>Account Settings:</strong> That critical account settings (e.g., email, phone number) have not been changed without the user's knowledge.</li>
+        <li><strong>"المنصة" / "التطبيق" / "كوبا":</strong> التطبيق المحمول (أندرويد وiOS)، لوحة التحكم الإدارية، وجميع الخدمات المرتبطة.</li>
+        <li><strong>"العميل" / "المستخدم":</strong> أي شخص يقوم بتحميل التطبيق وتسجيل حساب لطلب خدمات توصيل المياه.</li>
+        <li><strong>"السائق" / "مقدم الخدمة":</strong> أي شخص يمتلك صهريج مياه مرخص ويقدم خدمات التوصيل عبر المنصة.</li>
+        <li><strong>"الخدمات":</strong> ربط العملاء بسائقي الصهاريج، إدارة الطلبات، التتبع الحي، المدفوعات الرقمية، والتقييمات.</li>
+        <li><strong>"الاتفاقية":</strong> هذه الشروط والأحكام، سياسة الخصوصية، سياسة ملفات الارتباط، وسياسة الإثبات التشفيري.</li>
     </ul>
 
-    <h2>4. Administrative Access Restrictions</h2>
+    <h2>2. قبول الشروط</h2>
+    <p>باستخدامك لكوبا، تقر بأنك قد قرأت وفهمت وقبلت هذه الشروط. إذا كنت لا توافق، يرجى عدم استخدام التطبيق. نحتفظ بالحق في تعديل هذه الشروط؛ سيتم إخطار المستخدمين بأي تغييرات جوهرية عبر البريد الإلكتروني أو الإشعارات داخل التطبيق. استمرارك في استخدام التطبيق بعد التعديلات يعني قبولك للشروط المحدثة.</p>
 
-    <h3 style="color: #144272; margin: 20px 0 10px; border-left: 4px solid #0077b6; padding-left: 15px; font-size: 1.1rem;">4.1. No Direct Database Access</h3>
-    <p>After deployment, no administrator—including the platform owner, developers, or support staff—has direct access to the production database. All database access is mediated through a secure API that enforces strict access controls and logs every query.</p>
-
-    <h3 style="color: #144272; margin: 20px 0 10px; border-left: 4px solid #0077b6; padding-left: 15px; font-size: 1.1rem;">4.2. Support Ticket Procedure</h3>
-    <p>If an administrator requires access to user data for legitimate support purposes (e.g., resolving a dispute, investigating a technical issue), they must:</p>
+    <h2>3. التسجيل والحسابات</h2>
     <ul>
-        <li><strong>Submit a Support Ticket:</strong> The request must be submitted through the official support system, clearly stating the purpose, scope, and duration of the requested access.</li>
-        <li><strong>Provide a Written Statement:</strong> The administrator must provide a written statement explaining why the access is necessary and how the data will be used.</li>
-        <li><strong>Obtain Signed Approval:</strong> In cases involving sensitive data or access beyond standard support needs, the request must be signed by the data protection officer (DPO) or, in the absence of a DPO, by an authorised representative of the platform.</li>
+        <li>يجب أن يكون عمرك <strong>18 سنة على الأقل</strong> (أو الحصول على موافقة ولي الأمر كعميل).</li>
+        <li>يجب عليك تقديم معلومات دقيقة وكاملة أثناء التسجيل والحفاظ على تحديثها.</li>
+        <li>أنت مسؤول عن الحفاظ على سرية بيانات حسابك.</li>
+        <li>أنت مسؤول عن جميع الأنشطة التي تتم من خلال حسابك.</li>
+        <li>نحتفظ بالحق في تعليق أو إنهاء أي حساب ينتهك هذه الشروط أو القوانين المعمول بها.</li>
+        <li>يمكنك حذف حسابك في أي وقت من خلال إعدادات التطبيق أو بالاتصال بـ <strong>admin@kouba.site</strong>. الحذف نهائي. سيتم إزالة بياناتك الشخصية في غضون 30 يومًا كما هو موضح في سياسة الخصوصية.</li>
     </ul>
 
-    <h3 style="color: #144272; margin: 20px 0 10px; border-left: 4px solid #0077b6; padding-left: 15px; font-size: 1.1rem;">4.3. Explicitly Stated Cases</h3>
-    <p>The following are the only circumstances in which administrative access to user data may be granted:</p>
+    <h2>4. أنواع الحسابات والصلاحيات</h2>
+    <h3>أ. حساب العميل</h3>
     <ul>
-        <li><strong>Dispute Resolution:</strong> To investigate and resolve a formal dispute between a customer and a driver.</li>
-        <li><strong>Technical Investigation:</strong> To diagnose and fix a confirmed technical issue that cannot be resolved through normal support channels.</li>
-        <li><strong>Legal Compliance:</strong> To comply with a valid judicial order or a lawful request from a competent Moroccan authority (e.g., CNDP, judicial police).</li>
-        <li><strong>Fraud Prevention:</strong> To investigate suspected fraudulent activity, provided that the suspicion is based on objective evidence and documented.</li>
+        <li>يمكنك طلب خدمات توصيل المياه من السائقين المسجلين.</li>
+        <li>لك الحق في تقييم السائقين بعد كل رحلة (1 إلى 5 نجوم).</li>
+        <li>يمكنك تتبع موقع السائق الحي أثناء الرحلة.</li>
+        <li>يمكنك إلغاء الطلب خلال 30 دقيقة من قبول السائق دون غرامة (مع مراعاة أحكام الإلغاء في المادة 7 أدناه).</li>
+        <li>يمكنك الاطلاع على سجل الطلبات والمعاملات المالية.</li>
+        <li>يمكنك شحن محفظتك الرقمية عبر القسائم أو رصيد الهاتف.</li>
+    </ul>
+    <h3>ب. حساب السائق</h3>
+    <ul>
+        <li>يجب أن تكون مسجلاً كمالك صهريج مياه مرخص من السلطات المحلية (جماعة العيون).</li>
+        <li>يجب تقديم وثائق صالحة (رخصة سياقة مهنية، أوراق ملكية المركبة، التأمين، شهادات الفحص الصحي والفني).</li>
+        <li>جميع الوثائق تخضع للمراجعة والموافقة من قبل إدارة المنصة.</li>
+        <li>يمكنك استلام طلبات التوصيل بناءً على توفرك وسعة الخزان المتبقية (تحدث كل 12 ساعة).</li>
+        <li>يمكنك قبول أو رفض الطلبات الواردة خلال 3 دقائق؛ الإفراط في الرفض قد يؤثر على حالة الحساب.</li>
+        <li>توافق على تقديم خدمة مهنية وآمنة وفق معايير الجودة.</li>
     </ul>
 
-    <h3 style="color: #144272; margin: 20px 0 10px; border-left: 4px solid #0077b6; padding-left: 15px; font-size: 1.1rem;">4.4. Audit Trail</h3>
-    <p>Every instance of administrative data access is logged in an immutable audit trail, including:</p>
+    <h2>5. الخدمات المقدمة</h2>
     <ul>
-        <li>The identity of the administrator</li>
-        <li>The date and time of access</li>
-        <li>The specific data accessed</li>
-        <li>The purpose of access</li>
-        <li>The approval reference (if applicable)</li>
-    </ul>
-    <p>Users will be notified within 48 hours of any administrative access to their data, except where such notification would compromise a lawful investigation.</p>
-
-    <h2>5. Payment Processing, Receipts, and Cancellation Rules</h2>
-
-    <h3 style="color: #144272; margin: 20px 0 10px; border-left: 4px solid #0077b6; padding-left: 15px; font-size: 1.1rem;">5.1. Payment Top‑ups and Receipts</h3>
-    <p>For every successful top‑up or payment added to the user's wallet (e.g., purchasing credit), Kouba generates a detailed receipt. This receipt includes:</p>
-    <ul>
-        <li>A unique transaction token,</li>
-        <li>The payment amount,</li>
-        <li>A timestamp,</li>
-        <li>Any voucher or promo code used, and</li>
-        <li>The user's identifying details.</li>
-    </ul>
-    <p>The receipt is available for download and direct printing from within the app or the website.</p>
-
-    <h3 style="color: #144272; margin: 20px 0 10px; border-left: 4px solid #0077b6; padding-left: 15px; font-size: 1.1rem;">5.2. Cancellations and Fee Transfers</h3>
-    <p>Cancellations follow a separate process. <strong>Receipts are not issued for cancellations.</strong></p>
-    <p>When a driver <strong>or</strong> a client cancels an order after a match has been made, a cancellation fee of <strong>60% of the base service price</strong> is transferred to the <strong>"waiting party"</strong> (the party who did not cancel, and was waiting for the service).</p>
-    <p>For example, if a driver cancels after a match where the base price is 5 MAD, 60% (i.e., 3 MAD) is moved from the driver's applicable balance to the client's wallet, together with the recorded cancellation reason. This transaction is permanently recorded in:</p>
-    <ul>
-        <li>The client's wallet history,</li>
-        <li>The driver's wallet history, and</li>
-        <li>The delivery history of both parties.</li>
-    </ul>
-    <p>While no printable receipt is produced for cancellations, the transfer is <strong>fully verifiable</strong> through our public cryptographic commitments and exposed core algorithms, ensuring complete transparency and allowing users to track every database entry independently.</p>
-
-    <h3 style="color: #144272; margin: 20px 0 10px; border-left: 4px solid #0077b6; padding-left: 15px; font-size: 1.1rem;">5.3. Base Price, Water Costs, and Service Fees</h3>
-    <p>The base service price may vary from city to city, reflecting local currency differences and the specific operational costs determined by Kouba.</p>
-    <p>Importantly, <strong>Kouba does not charge for the water itself.</strong> We exclusively charge for <strong>facilitating the connection and service</strong> between clients and drivers. The actual price of the water delivered is a matter of commodity pricing and may be regulated by Kouba's internal policies or by government regulations. <strong>Kouba's service does not interfere with or set the price of the water commodity itself.</strong></p>
-
-    <h2>6. Legal Framework</h2>
-
-    <h3 style="color: #144272; margin: 20px 0 10px; border-left: 4px solid #0077b6; padding-left: 15px; font-size: 1.1rem;">6.1. Moroccan Law</h3>
-    <ul>
-        <li><strong>Law No. 09-08 on the Protection of Individuals with Regard to Processing of Personal Data:</strong> This law establishes the fundamental principles of data protection in Morocco, including the rights of access, rectification, and objection. Our cryptographic verification system and access controls are designed to comply with Articles 4–10 (data quality and security) and Articles 20–24 (data subject rights) of this law.</li>
-        <li><strong>Law No. 53-05 on Electronic Exchange of Legal Data:</strong> This law provides the legal framework for electronic signatures, electronic transactions, and the evidentiary value of electronic documents. The digital signatures used in our system are legally recognised under this law, particularly Articles 5–9 (electronic signature) and Articles 10–15 (electronic evidence).</li>
-        <li><strong>Law No. 31-05 on the Protection of Intellectual Property:</strong> This law protects the platform's intellectual property rights, including the cryptographic verification tools developed by Kouba.</li>
-        <li><strong>CNDP Regulations:</strong> The Moroccan National Commission for the Control of Personal Data Protection (CNDP) has issued guidelines on data security and breach notification. Our system complies with CNDP recommendations on encryption, access control, and breach notification within 72 hours.</li>
+        <li>المطابقة الذكية (جغرافية، سعة، مصدر مياه).</li>
+        <li>التتبع الحي على الخريطة.</li>
+        <li>المحفظة الرقمية والمدفوعات الآمنة.</li>
+        <li>نظام التقييم والمراجعات.</li>
+        <li>تذاكر الدعم للشكاوى والنزاعات.</li>
+        <li>نظام إثبات تشفيري عام للتحقق من سلامة البيانات (انظر المادة 8).</li>
     </ul>
 
-    <h3 style="color: #144272; margin: 20px 0 10px; border-left: 4px solid #0077b6; padding-left: 15px; font-size: 1.1rem;">6.2. International Law</h3>
+    <h2>6. التسعير والمدفوعات</h2>
     <ul>
-        <li><strong>General Data Protection Regulation (GDPR) (EU) 2016/679:</strong> Although Kouba is based in Morocco, we process data of users who may be located in the European Union. Our cryptographic verification system and access controls align with GDPR principles, including:
-            <ul style="list-style: none; padding-left: 30px; margin-top: 6px;">
-                <li style="padding-left: 20px; position: relative; font-size: 0.93rem;">• <strong>Article 5(1)(f):</strong> Integrity and confidentiality – personal data must be processed in a manner that ensures appropriate security.</li>
-                <li style="padding-left: 20px; position: relative; font-size: 0.93rem;">• <strong>Article 25:</strong> Data protection by design and by default – we have embedded cryptographic protections into the platform's architecture.</li>
-                <li style="padding-left: 20px; position: relative; font-size: 0.93rem;">• <strong>Article 32:</strong> Security of processing – our encryption, access controls, and audit logging meet the GDPR's security requirements.</li>
-                <li style="padding-left: 20px; position: relative; font-size: 0.93rem;">• <strong>Articles 33–34:</strong> Breach notification – we notify affected users and supervisory authorities within 72 hours of a confirmed breach.</li>
+        <li><strong>سعر الخدمة الأساسي متغير حسب المدينة:</strong> يعكس فروقات العملة المحلية والتكاليف التشغيلية المحددة من قبل كوبا.</li>
+        <li><strong>لا تفرض كوبا أي رسوم على المياه نفسها.</strong> نحن نتقاضى فقط <strong>رسوم تيسير الربط والخدمة</strong> بين العملاء والسائقين. السعر الفعلي للمياه الموصلة هو مسألة تتعلق بتسعير السلع، وقد يخضع للتنظيم من قبل سياسات كوبا الداخلية أو من قبل اللوائح الحكومية. <strong>لا تتدخل خدمة كوبا في تسعير سلعة المياه نفسها أو تحدده.</strong></li>
+        <li>جميع الأسعار بالدرهم المغربي وتشمل الضرائب (إن وجدت).</li>
+        <li>رسوم التيسير غير قابلة للاسترداد بعد إتمام التوصيلة بنجاح.</li>
+        <li>نحتفظ بالحق في تعديل رسوم التيسير أو هيكل التسعير. سيتم الإعلان عن أي تغيير عبر البريد الإلكتروني أو إشعار داخل التطبيق قبل 30 يومًا على الأقل من سريانه.</li>
+    </ul>
+
+    <h2>7. الإلغاء وتحويل الرسوم</h2>
+    <ul>
+        <li><strong>إلغاء العميل:</strong> مجاني خلال 30 دقيقة من قبول السائق.</li>
+        <li><strong>الإلغاء بعد التطابق (من قبل السائق أو العميل):</strong> في حال إلغاء الطلب بعد التطابق، يتم تحويل <strong>60% من سعر الخدمة الأساسي</strong> إلى <strong>"الطرف المنتظر"</strong> (الطرف الذي لم يقم بالإلغاء، وكان ينتظر الخدمة).</li>
+        <li><strong>مثال:</strong> إذا ألغى السائق بعد التطابق وكان السعر الأساسي 5 دراهم، يتم تحويل 60% (أي 3 دراهم) من رصيد السائق إلى محفظة العميل، مع تسجيل سبب الإلغاء. تسجل هذه المعاملة بشكل دائم في:
+            <ul style="list-style: none; padding-right: 30px; margin-top: 6px;">
+                <li style="padding-right: 20px; position: relative; font-size: 0.93rem;">• تاريخ محفظة العميل،</li>
+                <li style="padding-right: 20px; position: relative; font-size: 0.93rem;">• تاريخ محفظة السائق، و</li>
+                <li style="padding-right: 20px; position: relative; font-size: 0.93rem;">• تاريخ التسليم لكلا الطرفين.</li>
             </ul>
         </li>
-        <li><strong>OECD Guidelines on the Protection of Privacy and Transborder Flows of Personal Data:</strong> These guidelines, which Morocco has endorsed, recommend that data controllers implement security safeguards and provide individuals with access and correction rights. Our system fulfils these recommendations.</li>
-        <li><strong>UN Guidelines for the Regulation of Computerized Personal Data Files:</strong> These guidelines (adopted by the UN General Assembly in 1990) establish principles of data accuracy, security, and transparency that our cryptographic verification system embodies.</li>
+        <li><strong>الإلغاء التلقائي:</strong> إذا لم يقبل أي سائق خلال 5 دقائق، يتم إلغاء الطلب تلقائياً دون أي رسوم.</li>
+        <li>جميع تحويلات رسوم الإلغاء قابلة للتحقق بالكامل من خلال نظام الإثبات التشفيري العام (انظر المادة 8).</li>
     </ul>
 
-    <h2>7. User Responsibilities</h2>
-    <p>While Kouba provides the tools and public data for independent verification, users are responsible for:</p>
+    <h2>8. سلامة البيانات والإثبات التشفيري</h2>
+    <p>تلتزم كوبا بأعلى معايير الشفافية وسلامة البيانات. لقد قمنا بتطبيق نظام إثبات تشفيري عام، ولكن <strong>كوبا لا تقوم بالتحقق نيابة عنك.</strong> لكي يكون النظام جديراً بالثقة، يجب أن تكون أنت—أو طرف ثالث مستقل—قادراً على التحقق من بياناتك دون الاعتماد على خوادم كوبا.</p>
     <ul>
-        <li>Safeguarding their account credentials and not sharing them with others.</li>
-        <li>Regularly verifying their data using independent tools or third‑party auditors.</li>
-        <li>Reporting any discrepancies immediately to <a href="mailto:support@kouba.site">support@kouba.site</a>.</li>
+        <li><strong>النشر العام:</strong> كل <strong>سبعة أيام</strong>، تنشر كوبا التزاماتها التشفيرية (جذراً تشفيرياً مضغوطاً) على دفتر أستاذ عام. تبقى هذه البيانات <strong>متاحة للعموم لمدة شهر واحد</strong>، ثم تُؤرشف وتحتفظ بها لمدة <strong>سنتين إضافيتين</strong>.</li>
+        <li><strong>التحقق المستقل:</strong> يمكن للمستخدمين أو أي طرف ثالث التحقق من مسار الإثبات الخاص بهم مقابل الجذر العام. <strong>يجب إجراء هذا التحقق خارج البنية التحتية لكوبا.</strong></li>
+        <li><strong>الكود المصدري العام جزئياً:</strong> الكود الخاص بـ <strong>نظام المحفظة، معالجة المدفوعات، ولوحة الإدارة</strong> مكشوف للعموم للسماح بالتدقيق المستقل، بينما تبقى المكونات الأخرى (المطابقة، التوجيه، خدمات الموقع) مملوكة.</li>
+        <li><strong>قيود الوصول الإداري:</strong> لا يوجد وصول مباشر إلى قاعدة البيانات. أي وصول إداري يتطلب:
+            <ul style="list-style: none; padding-right: 30px; margin-top: 6px;">
+                <li style="padding-right: 20px; position: relative; font-size: 0.93rem;">• <strong>تذكرة دعم</strong> توضح الغرض والنطاق والمدة،</li>
+                <li style="padding-right: 20px; position: relative; font-size: 0.93rem;">• <strong>بياناً مكتوباً</strong> يشرح ضرورة الوصول،</li>
+                <li style="padding-right: 20px; position: relative; font-size: 0.93rem;">• <strong>موافقة موقعة</strong> من مسؤول حماية البيانات (DPO) أو ممثل مفوض، و</li>
+                <li style="padding-right: 20px; position: relative; font-size: 0.93rem;">• <strong>سجل تدقيق غير قابل للتعديل</strong> لكل عملية وصول.</li>
+            </ul>
+        </li>
+        <li>للاطلاع على التفاصيل الكاملة، يرجى قراءة <a href="cryptographic-proof-ar.html"><strong>سياسة الإثبات التشفيري</strong></a>.</li>
     </ul>
 
-    <h2>8. Changes to This Policy</h2>
-    <p>Kouba may update this Cryptographic Proof Policy from time to time. Material changes will be notified via email or in‑app notification at least 30 days before they take effect. The latest version will always be available at this page.</p>
-
-    <h2>9. Contact Us</h2>
-    <p>For questions about the cryptographic verification system, data integrity, or administrative access:</p>
+    <h2>9. الملكية الفكرية</h2>
     <ul>
-        <li><strong>Email:</strong> <a href="mailto:admin@kouba.site">admin@kouba.site</a></li>
-        <li><strong>Phone:</strong> +212 709 675 140</li>
-        <li><strong>Address:</strong> Laayoune, Kingdom of Morocco</li>
+        <li>جميع حقوق الملكية الفكرية المتعلقة بكوبا مملوكة حصرياً للمنصة ومحمية بموجب القوانين المغربية (القانون رقم 31-05) والمعاهدات الدولية.</li>
+        <li>نسخ أو تعديل أو توزيع أو هندسة عكسية لأي جزء من التطبيق محظور تماماً دون موافقة خطية مسبقة.</li>
+        <li>اسم "كوبا" وشعاره علامتان تجاريتان مسجلتان لدى OMPIC.</li>
     </ul>
 
-    <!-- RELATED LEGAL DOCUMENTS -->
+    <h2>10. تحديد المسؤولية</h2>
+    <ul>
+        <li>المنصة وسيط تقني بين العميل والسائق. نحن غير مسؤولين عن جودة المياه أو سلامة النقل أو تصرفات السائق.</li>
+        <li>لا نضمن أن الخدمات ستكون دون انقطاع أو خالية من الأخطاء.</li>
+        <li>مسؤوليتنا الإجمالية عن أي مطالبة ناشئة عن استخدام التطبيق محدودة بمبلغ رسوم التيسير المدفوعة للرحلة المعنية.</li>
+    </ul>
+
+    <h2>11. إخلاء المسؤولية عن الضمانات</h2>
+    <p><strong>يتم تقديم التطبيق والخدمات "كما هي" و"كما هي متاحة" دون أي ضمانات صريحة أو ضمنية، بما في ذلك على سبيل المثال لا الحصر الضمانات الضمنية للتسويق، أو الملاءمة لغرض معين، أو عدم الانتهاك. لا نضمن أن التطبيق سيكون آمناً أو دون انقطاع أو خالياً من الأخطاء.</strong></p>
+
+    <h2>12. القوة القاهرة</h2>
+    <p>لا يكون أي من الطرفين مسؤولاً عن التأخير أو الفشل الناجم عن أحداث خارجة عن سيطرته المعقولة، بما في ذلك الكوارث الطبيعية، إجراءات الحكومة، أعطال الشبكة، أو انقطاع البنية التحتية.</p>
+
+    <h2>13. الاتفاق الكامل وقابلية التجزئة</h2>
+    <p>تشكل هذه الشروط الاتفاق الكامل بينك وبين كوبا. إذا تبين أن أي حكم غير قابل للتنفيذ أو باطل، يتم تقييد أو إلغاء هذا الحكم إلى الحد الأدنى الضروري، وتبقى الأحكام المتبقية سارية المفعول بالكامل.</p>
+
+    <h2>14. القانون الواجب التطبيق والنزاعات</h2>
+    <ul>
+        <li>تخضع هذه الاتفاقية <strong>للقانون المغربي</strong>.</li>
+        <li>في حالة وجود نزاع، يحاول الطرفان أولاً حله وديًا عبر الدعم (admin@kouba.site).</li>
+        <li>إذا لم يتم حل النزاع خلال 30 يومًا، يتم إحالة الأمر إلى <strong>المحاكم المختصة بالعيون</strong>.</li>
+    </ul>
+
+    <div class="contact-box">
+        <strong>📞 اتصل بنا</strong><br>
+        البريد الإلكتروني: <a href="mailto:admin@kouba.site">admin@kouba.site</a><br>
+        الهاتف: <a href="tel:+212709675140">+212 709 675 140</a><br>
+        العنوان: العيون، المملكة المغربية
+    </div>
+
     <div class="related-box">
-        <strong>📚 Related Legal Documents</strong><br>
-        For a complete understanding of your rights and obligations as a user of the Kouba platform, please also read our
-        <a href="terms-of-service-en.html"><strong>Terms of Service</strong></a>.
+        <strong>📚 الوثائق القانونية ذات الصلة</strong><br>
+        لفهم كامل لحقوقك والتزاماتك كمستخدم لمنصة كوبا، يرجى أيضاً قراءة
+        <a href="cryptographic-proof-ar.html"><strong>سياسة الإثبات التشفيري</strong></a>.
     </div>
 
-    <!-- IMMEDIATE EFFECTIVENESS STATEMENT -->
-    <div class="effective-immediate">
-        ⚡ These statements shall take immediate effect upon the public deployment of the Kouba application.
-    </div>
-
-    <div class="footer">© 2026 KOUBA LAAYOUNE – All Rights Reserved</div>
+    <div class="footer">© 2026 كوبا العيون – جميع الحقوق محفوظة</div>
 </div>
 </body>
 </html>
