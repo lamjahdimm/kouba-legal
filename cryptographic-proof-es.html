@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba Criptográfica – Kouba</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, 'Segoe UI', sans-serif; background: #f0f2f5; color: #1e293b; line-height: 1.65; padding: 20px; }
+        .container { max-width: 1000px; margin: 0 auto; background: white; border-radius: 20px; padding: 40px 45px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+        h1 { color: #0a2647; border-bottom: 3px solid #0077b6; padding-bottom: 12px; margin-bottom: 25px; }
+        h2 { color: #144272; margin: 28px 0 12px; border-left: 4px solid #0077b6; padding-left: 15px; }
+        p { margin-bottom: 14px; font-size: 0.95rem; text-align: justify; }
+        ul { list-style: none; padding-left: 22px; margin-bottom: 18px; }
+        ul li { margin-bottom: 8px; padding-left: 20px; position: relative; font-size: 0.93rem; text-align: justify; }
+        ul li::before { content: "•"; position: absolute; left: 0; color: #0077b6; }
+        .footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #e2e8f0; text-align: center; font-size: 0.75rem; color: #94a3b8; }
+        .last-updated { background: #e8f0fe; padding: 10px 18px; border-radius: 10px; margin-bottom: 30px; display: inline-block; font-size: 0.85rem; }
+        .effective-immediate { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 12px 20px; border-radius: 8px; margin-top: 30px; font-weight: 600; color: #92400e; }
+        a { color: #0077b6; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        @media (max-width: 700px) { .container { padding: 25px 20px; } h1 { font-size: 1.5rem; } h2 { font-size: 1.2rem; } }
+        /* nested list fix */
+        ul ul { padding-left: 30px; list-style: none; }
+        ul ul li { padding-left: 20px; }
+        ul ul li::before { content: "•"; position: absolute; left: 0; color: #0077b6; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>🔐 Prueba Criptográfica de Pagos e Integridad de Datos</h1>
+    <div class="last-updated"><strong>Última actualización:</strong> 26 de agosto de 2026 | <strong>Fecha de entrada en vigor:</strong> Inmediatamente después del despliegue público de la aplicación</div>
+
+    <h2>1. Nuestro Compromiso con la Transparencia</h2>
+    <p>Kouba se compromete con los más altos estándares de transparencia, integridad de datos y confianza del usuario. Hemos implementado un sistema público de verificación criptográfica. Sin embargo, <strong>Kouba no realiza la verificación en su nombre.</strong> Para que el sistema sea digno de confianza, usted—o un tercero independiente de su elección—debe poder verificar sus datos sin depender de los servidores o aplicaciones de Kouba. Logramos esto haciendo que nuestros métodos, compromisos de datos y un subconjunto crítico de nuestro código fuente sean accesibles al público.</p>
+
+    <h2>2. Cómo Funciona el Sistema de Verificación Criptográfica (Público e Independiente)</h2>
+    <p>Para garantizar la confianza sin depender de nuestra buena voluntad, hacemos nuestros métodos <strong>parcialmente públicos</strong>. El código y la lógica del <strong>sistema de billetera</strong>, el <strong>procesamiento de pagos</strong> y el <strong>panel de administración</strong>—específicamente las interfaces y la lógica utilizadas para gestionar y visualizar los datos del usuario—son accesibles al público. Esto permite a los usuarios y auditores independientes inspeccionar exactamente cómo se manejan los datos financieros y cómo se realiza el acceso administrativo, sin exponer la totalidad de nuestro código propietario.</p>
+
+    <h3 style="color: #144272; margin: 20px 0 10px; border-left: 4px solid #0077b6; padding-left: 15px; font-size: 1.1rem;">2.1. Exposición Pública de los Algoritmos Financieros Básicos</h3>
+    <p>Los algoritmos utilizados específicamente para el procesamiento de pagos, el cálculo de saldos, las operaciones de billetera y la generación de compromisos criptográficos son parte de los módulos expuestos públicamente. No ocultamos cómo se registra una transacción, cómo se calcula un saldo o cómo se generan las huellas criptográficas para el registro público. Estos componentes lógicos financieros básicos están abiertos a la inspección, mientras que las demás partes no financieras de la plataforma siguen siendo propietarias.</p>
+
+    <h3 style="color: #144272; margin: 20px 0 10px; border-left: 4px solid #0077b6; padding-left: 15px; font-size: 1.1rem;">2.2. Publicación Pública y Archivo de los Compromisos Criptográficos</h3>
+    <p>Cada <strong>siete días</strong>, Kouba publica un registro público e inmutable de todos los datos críticos (saldos, transacciones, cancelaciones) en forma de una <strong>raíz criptográfica</strong> compacta. Esta raíz se publica en un libro mayor público (como una blockchain o un registro de transparencia público) junto con una marca de tiempo y una firma digital.</p>
+    <p>Los datos publicados permanecen <strong>accesibles al público durante un mes</strong> para permitir tiempo suficiente para la verificación independiente por parte de los usuarios y terceros. Después de este período de un mes, los datos se archivan y se conservan de forma segura durante <strong>dos años adicionales</strong>, y permanecen disponibles a solicitud para fines de auditoría, resolución de disputas o cumplimiento legal. Esto garantiza la responsabilidad a largo plazo mientras se mantiene la ventana de verificación activa enfocada y manejable.</p>
+
+    <h3 style="color: #144272; margin: 20px 0 10px; border-left: 4px solid #0077b6; padding-left: 15px; font-size: 1.1rem;">2.3. Pruebas Individuales para Usuarios</h3>
+    <p>Para cada usuario, Kouba proporciona una <strong>ruta de prueba</strong> completa—el conjunto de puntos de datos intermedios que vinculan las transacciones y saldos específicos de ese usuario con la raíz publicada públicamente. Los usuarios pueden descargar esta ruta de prueba en cualquier momento a través del sitio web o la aplicación, <strong>pero la aplicación no la verifica por usted.</strong></p>
+
+    <h3 style="color: #144272; margin: 20px 0 10px; border-left: 4px solid #0077b6; padding-left: 15px; font-size: 1.1rem;">2.4. Verificación Independiente (Paso Crucial)</h3>
+    <p>Los usuarios—o cualquier tercero independiente—pueden verificar su ruta de prueba contra la raíz pública. <strong>Esta verificación debe realizarse fuera de la propia infraestructura de Kouba.</strong> Debido a que publicamos todos los compromisos criptográficos de forma abierta, y exponemos la lógica completa de cómo se estructuran los datos financieros, cualquier persona puede:</p>
+    <ul>
+        <li>Escribir su propio script de verificación,</li>
+        <li>Utilizar un cliente independiente de código abierto,</li>
+        <li>O verificar manualmente los datos utilizando herramientas disponibles públicamente.</li>
+    </ul>
+    <p><strong>Kouba no proporciona un botón "Verificar mis datos" que funcione en nuestros servidores.</strong> Eso no tendría sentido—no podemos ser quienes crean los datos y quienes certifiquen su exactitud al mismo tiempo. El objetivo principal es que <strong>usted pueda verificarnos a nosotros</strong>, no que nosotros nos verifiquemos a nosotros mismos.</p>
+
+    <h3 style="color: #144272; margin: 20px 0 10px; border-left: 4px solid #0077b6; padding-left: 15px; font-size: 1.1rem;">2.5. Firmas Digitales</h3>
+    <p>Todas las operaciones críticas—incluidas las actualizaciones de saldo, los pagos y las acciones administrativas—están firmadas digitalmente con la clave privada de la plataforma. La clave pública correspondiente se publica en el sitio web y en el repositorio público, lo que permite a cualquier persona verificar la autenticidad de cualquier operación firmada.</p>
+
+    <h3 style="color: #144272; margin: 20px 0 10px; border-left: 4px solid #0077b6; padding-left: 15px; font-size: 1.1rem;">2.6. Repositorio de Código Fuente Parcialmente Público</h3>
+    <p>Para permitir la auditoría independiente mientras protegemos nuestra lógica operativa propietaria, Kouba mantiene un repositorio de código fuente <strong>parcialmente público</strong>. El código del <strong>sistema de billetera</strong>, el <strong>procesamiento de pagos</strong> y el <strong>panel de administración</strong> (específicamente las interfaces y la lógica utilizadas para gestionar y visualizar los datos del usuario) está completamente expuesto al público. Esto permite a los investigadores de seguridad, auditores y usuarios inspeccionar la lógica financiera básica y los flujos de trabajo de gobernanza de datos.</p>
+    <p>Los demás componentes del sistema (ej. emparejamiento, enrutamiento, servicios de ubicación) siguen siendo propietarios. Sin embargo, las partes críticas que manejan los fondos de los usuarios, las transacciones y el acceso administrativo a los datos están abiertas al escrutinio público—garantizando que no haya manipulaciones ocultas en las áreas que afectan directamente el dinero y la privacidad de los usuarios.</p>
+
+    <h2>3. Qué Pueden Verificar los Usuarios y Terceros</h2>
+    <p>Con los compromisos criptográficos públicos, los algoritmos básicos expuestos y el código fuente parcialmente abierto, cualquier persona puede verificar de forma independiente:</p>
+    <ul>
+        <li><strong>Saldo de la billetera:</strong> Que el saldo actual de un usuario coincide con el saldo comprometido en la raíz pública.</li>
+        <li><strong>Historial de pagos:</strong> Que cada transacción de pago (recarga, comisión, reembolso) se registra con precisión y no ha sido alterada.</li>
+        <li><strong>Transferencias por cancelación:</strong> Que cualquier transferencia del 60 % por cancelación se registra correctamente en ambas billeteras e historiales de entrega.</li>
+        <li><strong>Historial de pedidos:</strong> Que el historial de pedidos está completo y sin modificaciones.</li>
+        <li><strong>Configuración de la cuenta:</strong> Que la configuración crítica de la cuenta (ej. email, número de teléfono) no ha sido cambiada sin el conocimiento del usuario.</li>
+    </ul>
+
+    <h2>4. Restricciones de Acceso Administrativo</h2>
+
+    <h3 style="color: #144272; margin: 20px 0 10px; border-left: 4px solid #0077b6; padding-left: 15px; font-size: 1.1rem;">4.1. Sin Acceso Directo a la Base de Datos</h3>
+    <p>Después del despliegue, ningún administrador—incluido el propietario de la plataforma, desarrolladores o personal de soporte—tiene acceso directo a la base de datos de producción. Todo acceso a la base de datos se realiza a través de una API segura que impone controles de acceso estrictos y registra cada consulta.</p>
+
+    <h3 style="color: #144272; margin: 20px 0 10px; border-left: 4px solid #0077b6; padding-left: 15px; font-size: 1.1rem;">4.2. Procedimiento de Ticket de Soporte</h3>
+    <p>Si un administrador necesita acceder a los datos del usuario para fines de soporte legítimos (ej. resolver una disputa, investigar un problema técnico), debe:</p>
+    <ul>
+        <li><strong>Enviar un Ticket de Soporte:</strong> La solicitud debe presentarse a través del sistema de soporte oficial, indicando claramente el propósito, alcance y duración del acceso solicitado.</li>
+        <li><strong>Proporcionar una Declaración Escrita:</strong> El administrador debe proporcionar una declaración escrita explicando por qué es necesario el acceso y cómo se utilizarán los datos.</li>
+        <li><strong>Obtener la Aprobación Firmada:</strong> En los casos que involucren datos sensibles o acceso más allá de las necesidades de soporte estándar, la solicitud debe ser firmada por el delegado de protección de datos (DPO) o, en su ausencia, por un representante autorizado de la plataforma.</li>
+    </ul>
+
+    <h3 style="color: #144272; margin: 20px 0 10px; border-left: 4px solid #0077b6; padding-left: 15px; font-size: 1.1rem;">4.3. Casos Explicitamente Establecidos</h3>
+    <p>Las siguientes son las únicas circunstancias en las que se puede conceder el acceso administrativo a los datos del usuario:</p>
+    <ul>
+        <li><strong>Resolución de disputas:</strong> Para investigar y resolver una disputa formal entre un cliente y un conductor.</li>
+        <li><strong>Investigación técnica:</strong> Para diagnosticar y corregir un problema técnico confirmado que no puede resolverse a través de los canales de soporte normales.</li>
+        <li><strong>Cumplimiento legal:</strong> Para cumplir con una orden judicial válida o una solicitud legal de una autoridad marroquí competente (ej. CNDP, policía judicial).</li>
+        <li><strong>Prevención de fraude:</strong> Para investigar una actividad fraudulenta sospechosa, siempre que la sospecha se base en pruebas objetivas y documentadas.</li>
+    </ul>
+
+    <h3 style="color: #144272; margin: 20px 0 10px; border-left: 4px solid #0077b6; padding-left: 15px; font-size: 1.1rem;">4.4. Registro de Auditoría</h3>
+    <p>Cada instancia de acceso administrativo a datos se registra en un registro de auditoría inmutable, que incluye:</p>
+    <ul>
+        <li>La identidad del administrador</li>
+        <li>La fecha y hora del acceso</li>
+        <li>Los datos específicos a los que se accedió</li>
+        <li>El propósito del acceso</li>
+        <li>La referencia de aprobación (si corresponde)</li>
+    </ul>
+    <p>Los usuarios serán notificados dentro de las 48 horas de cualquier acceso administrativo a sus datos, excepto cuando dicha notificación comprometa una investigación legal.</p>
+
+    <h2>5. Procesamiento de Pagos, Recibos y Reglas de Cancelación</h2>
+
+    <h3 style="color: #144272; margin: 20px 0 10px; border-left: 4px solid #0077b6; padding-left: 15px; font-size: 1.1rem;">5.1. Recargas y Recibos</h3>
+    <p>Por cada recarga o adición de fondos exitosa a la billetera del usuario (ej. compra de crédito), Kouba genera un recibo detallado. Este recibo incluye:</p>
+    <ul>
+        <li>Un token de transacción único,</li>
+        <li>El monto del pago,</li>
+        <li>Una marca de tiempo,</li>
+        <li>Cualquier código de promoción o cupón utilizado, y</li>
+        <li>Los datos identificativos del usuario.</li>
+    </ul>
+    <p>El recibo está disponible para descargar e imprimir directamente desde la aplicación o el sitio web.</p>
+
+    <h3 style="color: #144272; margin: 20px 0 10px; border-left: 4px solid #0077b6; padding-left: 15px; font-size: 1.1rem;">5.2. Cancelaciones y Transferencias de Tarifas</h3>
+    <p>Las cancelaciones siguen un proceso separado. <strong>No se emiten recibos por cancelaciones.</strong></p>
+    <p>Cuando un conductor <strong>o</strong> un cliente cancela un pedido después de que se haya producido una coincidencia, se transfiere una tarifa de cancelación del <strong>60 % del precio base del servicio</strong> a la <strong>"parte en espera"</strong> (la parte que no canceló y estaba esperando el servicio).</p>
+    <p>Por ejemplo, si un conductor cancela después de una coincidencia con un precio base de 5 MAD, el 60 % (es decir, 3 MAD) se traslada del saldo aplicable del conductor a la billetera del cliente, junto con el motivo de cancelación registrado. Esta transacción se registra de forma permanente en:</p>
+    <ul>
+        <li>El historial de la billetera del cliente,</li>
+        <li>El historial de la billetera del conductor, y</li>
+        <li>El historial de entregas de ambas partes.</li>
+    </ul>
+    <p>Si bien no se genera un recibo imprimible para las cancelaciones, la transferencia es <strong>totalmente verificable</strong> a través de nuestros compromisos criptográficos públicos y algoritmos básicos expuestos, lo que garantiza una transparencia total y permite a los usuarios rastrear cada entrada de la base de datos de forma independiente.</p>
+
+    <h3 style="color: #144272; margin: 20px 0 10px; border-left: 4px solid #0077b6; padding-left: 15px; font-size: 1.1rem;">5.3. Precio Base, Costo del Agua y Tarifas de Servicio</h3>
+    <p>El precio base del servicio puede variar de una ciudad a otra, reflejando las diferencias de moneda local y los costes operativos específicos determinados por Kouba.</p>
+    <p>Es importante destacar que <strong>Kouba no cobra por el agua en sí.</strong> Cobramos exclusivamente por <strong>facilitar la conexión y el servicio</strong> entre clientes y conductores. El precio real del agua entregada es una cuestión de fijación de precios de productos básicos y puede estar regulado por las políticas internas de Kouba o por las regulaciones gubernamentales. <strong>El servicio de Kouba no interfiere ni establece el precio del agua como producto básico.</strong></p>
+
+    <h2>6. Marco Legal</h2>
+
+    <h3 style="color: #144272; margin: 20px 0 10px; border-left: 4px solid #0077b6; padding-left: 15px; font-size: 1.1rem;">6.1. Ley Marroquí</h3>
+    <ul>
+        <li><strong>Ley n.º 09-08 relativa a la protección de las personas físicas en lo que respecta al tratamiento de datos de carácter personal:</strong> Esta ley establece los principios fundamentales de la protección de datos en Marruecos, incluidos los derechos de acceso, rectificación y oposición. Nuestro sistema de verificación criptográfica y controles de acceso están diseñados para cumplir con los artículos 4 a 10 (calidad y seguridad de los datos) y los artículos 20 a 24 (derechos del interesado) de esta ley.</li>
+        <li><strong>Ley n.º 53-05 relativa al intercambio electrónico de datos jurídicos:</strong> Esta ley proporciona el marco legal para las firmas electrónicas, las transacciones electrónicas y el valor probatorio de los documentos electrónicos. Las firmas digitales utilizadas en nuestro sistema son legalmente reconocidas bajo esta ley, en particular los artículos 5 a 9 (firma electrónica) y los artículos 10 a 15 (prueba electrónica).</li>
+        <li><strong>Ley n.º 31-05 relativa a la protección de la propiedad intelectual:</strong> Esta ley protege los derechos de propiedad intelectual de la plataforma, incluidos las herramientas de verificación criptográfica desarrolladas por Kouba.</li>
+        <li><strong>Reglamentos de la CNDP:</strong> La Comisión Nacional de Control de la Protección de Datos de Carácter Personal (CNDP) ha emitido directrices sobre la seguridad de los datos y la notificación de violaciones. Nuestro sistema cumple con las recomendaciones de la CNDP sobre cifrado, control de acceso y notificación de violaciones en un plazo de 72 horas.</li>
+    </ul>
+
+    <h3 style="color: #144272; margin: 20px 0 10px; border-left: 4px solid #0077b6; padding-left: 15px; font-size: 1.1rem;">6.2. Derecho Internacional</h3>
+    <ul>
+        <li><strong>Reglamento General de Protección de Datos (RGPD) (UE) 2016/679:</strong> Aunque Kouba tiene su sede en Marruecos, procesamos datos de usuarios que pueden estar ubicados en la Unión Europea. Nuestro sistema de verificación criptográfica y controles de acceso se alinean con los principios del RGPD, incluidos:
+            <ul style="list-style: none; padding-left: 30px; margin-top: 6px;">
+                <li style="padding-left: 20px; position: relative; font-size: 0.93rem;">• <strong>Artículo 5(1)(f):</strong> Integridad y confidencialidad—los datos personales deben tratarse de manera que se garantice una seguridad adecuada.</li>
+                <li style="padding-left: 20px; position: relative; font-size: 0.93rem;">• <strong>Artículo 25:</strong> Protección de datos desde el diseño y por defecto—hemos incorporado protecciones criptográficas en la arquitectura de la plataforma.</li>
+                <li style="padding-left: 20px; position: relative; font-size: 0.93rem;">• <strong>Artículo 32:</strong> Seguridad del tratamiento—nuestro cifrado, controles de acceso y registros de auditoría cumplen con los requisitos de seguridad del RGPD.</li>
+                <li style="padding-left: 20px; position: relative; font-size: 0.93rem;">• <strong>Artículos 33–34:</strong> Notificación de violaciones—notificamos a los usuarios afectados y a las autoridades de control en un plazo de 72 horas tras la confirmación de una violación.</li>
+            </ul>
+        </li>
+        <li><strong>Directrices de la OCDE sobre la protección de la privacidad y los flujos transfronterizos de datos personales:</strong> Estas directrices, que Marruecos ha respaldado, recomiendan que los responsables del tratamiento implementen garantías de seguridad y proporcionen a los individuos derechos de acceso y rectificación. Nuestro sistema cumple con estas recomendaciones.</li>
+        <li><strong>Directrices de la ONU para la regulación de los archivos informatizados de datos personales:</strong> Estas directrices (adoptadas por la Asamblea General de la ONU en 1990) establecen principios de exactitud, seguridad y transparencia de los datos que nuestro sistema de verificación criptográfica encarna.</li>
+    </ul>
+
+    <h2>7. Responsabilidades del Usuario</h2>
+    <p>Si bien Kouba proporciona las herramientas y los datos públicos para la verificación independiente, los usuarios son responsables de:</p>
+    <ul>
+        <li>Proteger sus credenciales de cuenta y no compartirlas con otros.</li>
+        <li>Verificar regularmente sus datos utilizando herramientas independientes o auditores externos.</li>
+        <li>Informar de inmediato cualquier discrepancia a <a href="mailto:support@kouba.site">support@kouba.site</a>.</li>
+    </ul>
+
+    <h2>8. Cambios en esta Política</h2>
+    <p>Kouba puede actualizar esta Política de Prueba Criptográfica de vez en cuando. Los cambios sustanciales se notificarán por correo electrónico o mediante notificación en la aplicación al menos 30 días antes de su entrada en vigor. La versión más reciente estará siempre disponible en esta página.</p>
+
+    <h2>9. Contáctenos</h2>
+    <p>Para preguntas sobre el sistema de verificación criptográfica, la integridad de los datos o el acceso administrativo:</p>
+    <ul>
+        <li><strong>Correo electrónico:</strong> <a href="mailto:admin@kouba.site">admin@kouba.site</a></li>
+        <li><strong>Teléfono:</strong> +212 709 675 140</li>
+        <li><strong>Dirección:</strong> Laayún, Reino de Marruecos</li>
+    </ul>
+
+    <!-- DECLARACIÓN DE VIGENCIA INMEDIATA -->
+    <div class="effective-immediate">
+        ⚡ Estas declaraciones entrarán en vigor inmediatamente después del despliegue público de la aplicación Kouba.
+    </div>
+
+    <div class="footer">© 2026 KOUBA LAAYOUNE – Todos los derechos reservados</div>
+</div>
+</body>
+</html>
