@@ -1,7 +1,5 @@
 📜 Kouba Legal Documents
-https://img.shields.io/badge/Deployed%2520on-Cloudflare%2520Pages-F38020?style=for-the-badge&logo=cloudflare&logoColor=white
-https://img.shields.io/badge/Languages-4-0077b6?style=for-the-badge&logo=google-translate&logoColor=white
-https://img.shields.io/badge/Last%2520Updated-August%25202026-ffcd00?style=for-the-badge&logo=clock&logoColor=white
+
 
 Official legal documents for the Kouba water tanker automation platform – connecting clients with licensed water tanker drivers in Laayoune, Morocco.
 
